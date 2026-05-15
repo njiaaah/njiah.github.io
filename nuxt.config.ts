@@ -23,7 +23,12 @@ export default defineNuxtConfig({
     '@nuxt/image',
   ],
   components: [
-    { path: '~/components/global/content', global: true },
+    {
+      path: '~/components/global/content',
+      pathPrefix: false,
+      prefix: 'GlobalContent',
+      global: true,
+    },
     '~/components',
   ],
   tailwindcss: {
