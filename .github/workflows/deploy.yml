@@ -23,13 +23,13 @@ jobs:
       - run: corepack enable
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: npm
       - run: npm ci
-      - run: npx nuxt build --preset github_pages
+      - run: npm run build
         env:
-          # Project site: https://njiaaah.github.io/njiah.github.io/
-          NUXT_APP_BASE_URL: /njiah.github.io/
+          # Custom domain njiah.ru serves from site root
+          NUXT_APP_BASE_URL: /
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./.output/public

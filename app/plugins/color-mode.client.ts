@@ -16,6 +16,8 @@ function applyMode(mode: 'light' | 'dark') {
   html.classList.add(mode);
 }
 
-const stored = getStoredPreference();
-const resolved = stored ?? getSystemPreference();
-applyMode(resolved);
+export default defineNuxtPlugin(() => {
+  const stored = getStoredPreference();
+  const resolved = stored ?? getSystemPreference();
+  applyMode(resolved);
+});

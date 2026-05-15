@@ -15,15 +15,9 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
     '@nuxt/image',
-    '@nuxt/fonts',
   ],
-  content: {
-    experimental: {
-      sqliteConnector: 'native',
-    },
-  },
   components: [
-    { path: '~/components/content', global: true },
+    { path: '~/components/global/content', global: true },
     '~/components',
   ],
   tailwindcss: {
