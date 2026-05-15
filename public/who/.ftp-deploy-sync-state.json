@@ -1,0 +1,61 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1725205957894,
+    "data": [
+        {
+            "type": "file",
+            "name": ".prettierrc",
+            "size": 40,
+            "hash": "b90a2d062e9a3cb7c7e9cca9b74684c4e906456954909e2fc15d0a616b964993"
+        },
+        {
+            "type": "file",
+            "name": "admin.php",
+            "size": 1740,
+            "hash": "34671e28a5b87860f59756694c239a72610f1c6f8b44465bf3b75ea7d185b991"
+        },
+        {
+            "type": "file",
+            "name": "anim.css",
+            "size": 0,
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "type": "file",
+            "name": "favico.ico",
+            "size": 285,
+            "hash": "089b54eff6802d8ca20619e967e5d26ebfb90bb860cae81aa87dcd578439a488"
+        },
+        {
+            "type": "file",
+            "name": "index.html",
+            "size": 6910,
+            "hash": "80f02a1b616c320326252444204939cfa62153ed9bbb18f804a602f9370d6687"
+        },
+        {
+            "type": "file",
+            "name": "overrides.js",
+            "size": 491,
+            "hash": "ccfb83f400a6045b2b4fbc91c3dc2e5dba0504fe3e2cbb8c8707e72366d66e7b"
+        },
+        {
+            "type": "file",
+            "name": "script.js",
+            "size": 10223,
+            "hash": "6c3957ea29397a22b297b38c9c4b9b866aee534b3afd293097fa3a1dfd664068"
+        },
+        {
+            "type": "file",
+            "name": "style.css",
+            "size": 5667,
+            "hash": "7be7b0c9ad6b231883f27f45f1b93828a8dceaa904421c674e27e5f4dd15ba46"
+        },
+        {
+            "type": "file",
+            "name": "tailwind.config.ts",
+            "size": 0,
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>Где-то пьют</title>
+	<link rel="stylesheet" type="text/css" href="clicker.css">
+	<script type="text/javascript" src="clicker.js"></script>
+</head>
+<body>
+
+
+
+
+
+<section class='flexcontainer'>
+
+<shop id="shop flexitem">
+	<!-- ОПАЧКИ, ТАБЛИЧКИ))))))))))))))))))))))))))) срал на них -->
+	<table>
+	<tr>
+		<th title="Спрайт +1 литр за клик" id="sprite1" onclick="click1Upgrade()" ></th>
+		<th><div id="upgrade1Cost">10</div> Литров</th> <th id="firstNumber">0</th>
+	</tr>
+	<tr id="edahide">
+		<th title="+1 литр в секунду" id="eda1" onclick="click2Upgrade()" ></th>
+		<th><div id="upgrade2Cost">100</div> Литров</th> <th id="secondNumber">0</th>
+	</tr>
+	<tr id="thirdUpgradehide">
+		<th><button title="+100% литров за клик" onclick="click3Upgrade()">Multiply click $ by 100% </button></th>
+		<th><div id="upgrade3Cost">500</div> Литров</th><th>Пойти на кухню</th>
+	</tr>
+	</table>
+	<tr>
+		<th><button onclick="prestige()">престиж </button></th>
+	</tr>
+	</table>
+</shop>
+
+<clickArea id="olegclick flexitem">
+
+			<table>
+				<tr>
+					<th> <h1 id="h1CurrentMoney" class="clickTable">ПАХНЕТ ВОДКОЙ</h1>	</th>
+				</tr>
+				<tr> <th style="opacity: 0%">1488 1488 1488 1488 1488 1488 1488 1488 1488 1488 1488</th> </tr><tr> <!-- задаю ширину яки царюга-->
+						<th id="olegbutton" onclick="clickOleg()">       														<!-- Тут голова Олега -->
+						<div class='specialEffects' id="sf">                     <!-- сюда идут спецэфекты на голове-->																			<!-- Доп эффекты -->
+
+						</div>
+					</th>
+				</tr>
+				<tr>
+					<th class='jopa'><p id='perClick'>1 литр за клик</p><p>    </p><p id='Income'>0 литров в секунду</p></th>
+					<th class='jopa'></th>
+				</tr>
+				<script>if (income > 0) {//показ инкама при заходе
+					document.getElementById('Income').innerHTML = income + ' Литров в секунду'}
+					else {document.getElementById('Income').innerHTML =  '0 Литров в секунду'}
+				</script>
+			</table>
+
+</clickArea>
+
+
+
+
+
+	</section>
+
+<div class='anim'><label><input type="checkbox" id="runAnimation" checked> Animation</label></div>
+
+	<gameprogress>
+		<button class="buttonReset" onclick='clickDeleteProgress()'>Поспать</button>
+	</gameprogress>
+
+
+</body>
+</html>

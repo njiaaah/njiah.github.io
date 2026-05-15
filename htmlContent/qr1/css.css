@@ -1,0 +1,9 @@
+.rickroll {
+    height: 100vh;
+    width: 100vw;
+}
+
+body{
+    overflow: hidden;
+    background-image: 'videoplayback.mp4' ;
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>Где-то пьют</title>
+  <script type="text/javascript" src="perks.js"></script>
+	<script type="text/javascript" src="clicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="clicker.css">
+	<link rel="stylesheet" type="text/css" href="skilltree.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- древо умений -->
+
+<div class="skillTree" id="skillTree">
+
+	<div class="skillTreeContainer">
+
+		<h3>Скилухи Олега <br><span class='skillPoints'>0</span> очков</h3>
+
+		<button class="closeSkillTreeButton" onclick="closeSkillTree()" >ЗАКРЫТЬ</button>
+
+
+		<div onclick="levelUpPerk001()" id="perk001"><span id="perk001Level">0</span>
+			<info class='perksInfo'>Критическая
+				<p>
+					КРИТИЧЕСКАЯ ОШИБ_ОЧКА<br><br>
+					Чем пьянее, тем чаще Олег переливает себе водяры<br>
+					"Одна ошибка и ты ошибся" Конфуций 322год до н.э.<br><br>
+					Шанс <span id="perk001Chance">0</span>% налить в <span id="perk001ChanceMultiplier">2</span> раза больше водки<br>
+					Шанс за уровень: +<span id="perk001ChancePerLevel">2</span>%   Стоимость: <span id="perk001Cost"></span><br>
+					Текущий уровень: <span id="perk001Levelhint">0</span>
+				</p>
+			</info>
+		</div>
+
+		<div onclick="levelUpPerk002()" id="perk002">1
+			<info class='perksInfo'>Критическая</info>
+		</div>
+
+		<div onclick="levelUpPerk003()" id="perk003">1
+			<info class='perksInfo'>Критическая</info>
+		</div>
+
+		<div onclick="levelUpPerk004()" id="perk004">1
+			<info class='perksInfo'>Критическая</info>
+		</div>
+
+
+	</div>
+
+
+</div>
+
+
+
+<!-- грид -->
+
+<div class="parent">
+
+<!-- Менюшка с апгрейдами -->
+
+<div class="div1">
+
+<table>
+  <tr class="info1">
+
+    <th title="Спрайт +1 литр за клик" id="sprite1"></th>
+    <th>Стоимость<div id="costOf1Upgrade"></div></th>
+
+    <th>
+      <button class="upgradeButton button1" onclick="click1Upgrade()" >LVL UP</button>
+      <div id="levelOf1Upgrade">0</div>
+			<info class="info">
+				<p>
+					Размешать со спрайтом<br><br>
+					"Олег пьет водку со спрайтом. Зачем, спросите Вы?<br>
+			    Так водки можно выпить больше. <br>Хотя Олега замечали и с фантой."<br><br>
+					Дает за уровень: <span id="incomeFrom1UpgradePerLevel">1</span> л. за клик<br>
+					Дает: <span id="incomeFrom1UpgradeTotal">1</span> л. за клик<br>
+				</p>
+			</info>
+    </th>
+  </tr>
+
+  <tr id="hide2upgrade" class="info2">
+    <th title="+1 литр в секунду" id="eda1" onclick="click2Upgrade(2)" ></th>
+    <th>Стоимость<div id="costOf2Upgrade"></div></th>
+    <th>
+      <button class="upgradeButton" onclick="click2Upgrade()" >LVL UP</button>
+      <div id="levelOf2Upgrade">0</div>
+			<info class="info">
+				<p>
+					Съесть орешек<br><br>
+					"Можно запивать, а можно закусывать. Или<br>
+			    и то и то сразу. Не пересолите."<br><br>
+					Дает за уровень: <span id="incomeFrom2UpgradePerLevel">1</span> л. в секунду<br>
+					Дает: <span id="incomeFrom2UpgradeTotal">0</span> л. в секунду<br>
+				</p>
+			</info>
+    </th>
+  </tr>
+
+	<tr id="hide3upgrade" class="info3">
+    <th title="" onclick="click3Upgrade()" ></th>
+    <th>Стоимость<div id="costOf3Upgrade"></div></th>
+    <th>
+      <button class="upgradeButton" onclick="click3Upgrade()" >LVL UP</button>
+      <div id="levelOf3Upgrade">0</div>
+			<info class="info">
+				<p>
+					Закинуться углем<br><br>
+					"Даже Олег думает о завтрешнем дне.<br>
+			    Не забудьте активировать."<br><br>
+					Дает за уровень: <span id="incomeFrom3UpgradePerLevel">0</span> л.<br>
+					Дает: <span id="incomeFrom3UpgradeTotal">0</span> л.<br>
+				</p>
+			</info>
+    </th>
+
+		<tr id="hide4upgrade" class="info4">
+	    <th title="" onclick="click4Upgrade()" ></th>
+	    <th>Стоимость<div id="costOf4Upgrade"></div></th>
+	    <th>
+	      <button class="upgradeButton" onclick="click4Upgrade()" >LVL UP</button>
+	      <div id="levelOf4Upgrade">0</div>
+				<info class="info">
+					<p>
+						Закинуться углем<br><br>
+						"Даже Олег думает о завтрешнем дне.<br>
+				    Не забудьте активировать."<br><br>
+						Дает за уровень: <span id="incomeFrom4UpgradePerLevel">0</span> л.<br>
+						Дает: <span id="incomeFrom4UpgradeTotal">0</span> л.<br>
+					</p>
+				</info>
+	    </th>
+
+			<tr id="hide5upgrade" class="info5">
+		    <th title="" onclick="click5Upgrade()" ></th>
+		    <th>Стоимость<div id="costOf5Upgrade"></div></th>
+		    <th>
+		      <button class="upgradeButton" onclick="click5Upgrade()" >LVL UP</button>
+		      <div id="levelOf5Upgrade">0</div>
+					<info class="info">
+						<p>
+							Закинуться углем<br><br>
+							"Даже Олег думает о завтрешнем дне.<br>
+					    Не забудьте активировать."<br><br>
+							Дает за уровень: <span id="incomeFrom5UpgradePerLevel">0</span> л.<br>
+							Дает: <span id="incomeFrom5UpgradeTotal">0</span> л.<br>
+						</p>
+					</info>
+		    </th id="edahide" >
+
+				<tr id="hide6upgrade" class="info6">
+			    <th title="" onclick="click6Upgrade()" ></th>
+			    <th>Стоимость<div id="costOf6Upgrade"></div></th>
+			    <th>
+			      <button class="upgradeButton" onclick="click6Upgrade()" >LVL UP</button>
+			      <div id="levelOf6Upgrade">0</div>
+						<info class="info">
+							<p>
+								Закинуться углем<br><br>
+								"Даже Олег думает о завтрешнем дне.<br>
+						    Не забудьте активировать."<br><br>
+								Дает за уровень: <span id="incomeFrom6UpgradePerLevel">0</span> л.<br>
+								Дает: <span id="incomeFrom6UpgradeTotal">0</span> л.<br>
+							</p>
+						</info>
+			    </th>
+
+					<tr id="hide7upgrade" class="info7">
+				    <th title="" onclick="click7Upgrade()" ></th>
+				    <th>Стоимость<div id="costOf7Upgrade"></div></th>
+				    <th>
+				      <button class="upgradeButton" onclick="click7Upgrade()" >LVL UP</button>
+				      <div id="levelOf7Upgrade">0</div>
+							<info class="info">
+								<p>
+									Закинуться углем<br><br>
+									"Даже Олег думает о завтрешнем дне.<br>
+							    Не забудьте активировать."<br><br>
+									Дает за уровень: <span id="incomeFrom7UpgradePerLevel">0</span> л.<br>
+									Дает: <span id="incomeFrom7UpgradeTotal">0</span> л.<br>
+								</p>
+							</info>
+				    </th>
+
+						<tr id="hide8upgrade" class="info8">
+					    <th title="" onclick="click8Upgrade()" ></th>
+					    <th>Стоимость<div id="costOf8Upgrade"></div></th>
+					    <th>
+					      <button class="upgradeButton" onclick="click8Upgrade()" >LVL UP</button>
+					      <div id="levelOf8Upgrade">0</div>
+								<info class="info">
+									<p>
+										Закинуться углем<br><br>
+										"Даже Олег думает о завтрешнем дне.<br>
+								    Не забудьте активировать."<br><br>
+										Дает за уровень: <span id="incomeFrom8UpgradePerLevel">0</span> л.<br>
+										Дает: <span id="incomeFrom8UpgradeTotal">0</span> л.<br>
+									</p>
+								</info>
+					    </th>
+
+							<tr id="hide9upgrade" class="info9">
+						    <th title="" onclick="click9Upgrade()" ></th>
+						    <th>Стоимость<div id="costOf9Upgrade"></div></th>
+						    <th>
+						      <button class="upgradeButton" onclick="click9Upgrade()" >LVL UP</button>
+						      <div id="levelOf9Upgrade">0</div>
+									<info class="info">
+										<p>
+											Закинуться углем<br><br>
+											"Даже Олег думает о завтрешнем дне.<br>
+									    Не забудьте активировать."<br><br>
+											Дает за уровень: <span id="incomeFrom9UpgradePerLevel">0</span> л.<br>
+											Дает: <span id="incomeFrom9UpgradeTotal">0</span> л.<br>
+										</p>
+									</info>
+						    </th>
+
+								<tr id="hide10upgrade"  class="info10">
+							    <th title="" onclick="click10Upgrade()" ></th>
+							    <th>Стоимость<div id="costOf10Upgrade"></div></th>
+							    <th>
+							      <button class="upgradeButton" onclick="click10Upgrade()" >LVL UP</button>
+							      <div id="levelOf10Upgrade">0</div>
+										<info class="info">
+											<p>
+												Закинуться углем<br><br>
+												"Даже Олег думает о завтрешнем дне.<br>
+										    Не забудьте активировать."<br><br>
+												Дает за уровень: <span id="incomeFrom10UpgradePerLevel">0</span> л.<br>
+												Дает: <span id="incomeFrom10UpgradeTotal">0</span> л.<br>
+											</p>
+										</info>
+							    </th>
+
+									<tr>
+								    <th title="" onclick="click1XpUpgrade()" ></th>
+								    <th>Стоимость<div></div></th>
+								    <th>
+								      <button class="upgradeButton" onclick="click1XpUpgrade()" >LVL UP</button>
+								      <div>0</div>
+								    </th>
+</table>
+
+</div>
+
+<!-- Количество литров на руках -->
+
+  <div class="div2 ">
+    <h1 id="h1CurrentMoney" >ПАХНЕТ ВОДКОЙ</h1>
+   </div>
+
+<!-- Бошка Олега -->
+
+<div class="div3">
+  <div id="olegbutton" onclick="clickOleg()"></div> <!-- Тут голова -->
+
+  <div class='specialEffects' id="sf"></div>    <!-- сюда идут спецэфекты на голове -->
+</div>
+
+<!-- Значения литров за клик и за секунду, нижний блок по середине -->
+  <div class="div4">
+  <div class='jopa'><p id='perClick'>1 литр за клик</p><p id='Income'>0 литров в секунду</p> <p><span id ="xp">0</span><span id="xpneed">10</span></p>
+	<p><span id="lvl"></span><span id="perkPoints"></span></div>
+  <div class='jopa'></div>
+    <script>if (income > 0) { //показ инкама при заходе
+      document.getElementById('Income').innerHTML = income + ' Литров в секунду'}
+      else {document.getElementById('Income').innerHTML =  '0 Литров в секунду'}
+    </script>
+
+
+<!-- Панель с кнопками неопределноого места жительства -->
+	<div class="div5">
+    <label><input type="checkbox" id="runAnimation" checked> Animation</label>
+    <button onclick="prestige()">Престиж</button>
+		<button onclick='clickDeleteProgress()'>Поспать</button>
+		<button class="openSkillTreeButton" onclick="openSkillTree()">ДЕРЕВО</burron>
+
+	</div>
+
+
+</body>
+</html>

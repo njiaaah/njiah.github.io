@@ -1,0 +1,43 @@
+<!-- генератор паролей ростюши, выглядит ахуенно, я знаю -->
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+	<title>pass</title>
+	<link rel="stylesheet" type="text/css" href="pasgen.css">
+</head>
+<body>
+
+	<section>
+
+		<gen>	
+
+			<h1 id="password">Сколько знаков, братан?</h1><br><br>  <!-- ростик выводит пароль в параграф -->
+
+				<div class="container">
+
+				<button onclick="sixSymb()">6</button>
+				<button onclick="eightSymb()">8</button>
+				<button onclick="tenSymb()">10</button>
+				<button onclick="twelveSymb()">12</button>
+
+				</div>
+
+		</gen><br><br>
+
+
+	<log>
+		<h2 id="paslog">password log:<br></h2> <!-- лог паролей -->
+	</log>
+	</section>
+
+
+
+
+<script src="pasgen.js"></script>
+
+</body>
+</html>
+
+<!-- ТУДУ лист: 
+	баг - после очистки лога не пишется 1 пароль-->

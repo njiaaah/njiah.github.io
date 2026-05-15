@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="alcosweeper.css"></link>
+  <meta charset="utf-8">
+
+    <title></title>
+  </head>
+  <body>
+
+    <div class='flexcontainer'>
+        <div class="flexitem" id="flags"> 60 🚩 left</div>
+        <div class="flexitem" id="boxesOpened"> Boxes: 225</div>
+        <div class="flexitem newgame" onclick='restart()'>New game</div>
+          <select class='flexitem' id='selectsideSize'>
+            <option value='10'>Легко</option>
+            <option value='15' selected>Нормально</option>
+            <option value='20'>Сложно</option>
+            <option value='25'>Невозможно</option>
+            <option value='30'>Олег</option>
+            <option value='50'>Потому что могу</option>
+          </select>
+    </div>
+
+<div class='flexcontainer'>
+  <div id="kakBeDiv" class="kakJeYaZaebalsyaKorobkaEbanaya"></div>
+  <overlay id="kakBeDiv2" class="kakJeYaZaebalsyaKorobkaEbanaya ontop"></overlay>
+
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="alcosweeper.js"></script>
+
+  </body>
+</html>

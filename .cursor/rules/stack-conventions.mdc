@@ -1,0 +1,14 @@
+---
+description: Portfolio stack and conventions – Nuxt 4, Vue 3, Tailwind, Nuxt Content; no Pinia
+alwaysApply: true
+---
+
+# Stack Conventions
+
+- **Framework**: Nuxt 4, Vue 3 Composition API.
+- **Styling**: Tailwind CSS; timeline and UI are custom (no component library).
+- **Content**: @nuxt/content for MD files (works/jobs detail pages).
+- **State**: No Pinia. Use composables and sessionStorage (e.g. timeline scroll position).
+- **Structure**: Follow PLAN.md – `pages/`, `composables/`, `components/`, `content/works/`, `content/jobs/`, `data/portfolio.json`.
+
+Prefer these conventions so suggestions stay aligned with the project.

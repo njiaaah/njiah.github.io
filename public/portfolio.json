@@ -1,0 +1,24 @@
+{
+  "works": [
+    { "slug": "cat-login", "title": "Animated login logo", "dateRange": { "start": "2025-06-01", "end": "2026-01-31" }, "imageUrl": "/images/works/cat.png", "stack": ["SVG", "CSS"] },
+    { "slug": "mine", "title": "Online Minesweeper", "dateRange": { "start": "2025-06-01", "end": "2025-06-31" }, "imageUrl": "/images/works/minepreview.png", "stack": ["Nuxt", "SVG", "Tailwind", "Supabase", "Node.js"] },
+    { "slug": "tracker", "title": "Calorie Tracker", "dateRange": { "start": "2023-05-01", "end": "2025-01-30" }, "imageUrl": "/images/works/tracker-preview.png", "stack": ["Nuxt", "Tailwind", "NuxtUi","i18n","JWT", "IndexedDB"] },
+    { "slug": "mosrealstroy-redcross", "title": "Redcross Pass CRM", "dateRange": { "start": "2023-04-15", "end": "2024-09-15" }, "imageUrl": "/images/mosrealstroy/redcross/1.webp", "stack": ["HTML", "CSS", "JavaScript", "YandexMap", "noUiSlider", "SwiperJS"] },
+    { "slug": "wms", "title": "WMS Project", "dateRange": { "start": "2023-02-01", "end": "2024-5-30" }, "imageUrl": "/images/works/wms.png", "stack": ["Nuxt", "Tailwind", "NuxtUi", "VueUse", "Pinia", "i18n", "Figma"] },
+    { "slug": "mosrealstroy-project", "title": "Mosrealstroy Website", "dateRange": { "start": "2023-03-01", "end": "2023-11-30" }, "imageUrl": "/images/works/mosrealstroy.png", "stack": ["HTML", "CSS", "JavaScript", "YandexMap", "noUiSlider", "SwiperJS"] },
+    { "slug": "mosrealstroy-vatutino", "title": "Vatutino Website", "dateRange": { "start": "2023-05-01", "end": "2023-08-30" }, "imageUrl": "/images/works/vatutino.png", "stack": ["HTML", "CSS", "JavaScript", "YandexMap", "noUiSlider", "SwiperJS"] },
+    { "slug": "mosrealstroy-intellegent", "title": "Intelligent Website", "dateRange": { "start": "2023-02-15", "end": "2023-04-31" }, "imageUrl": "/images/mosrealstroy/intellegent/1.webp", "stack": ["HTML", "CSS", "JavaScript", "YandexMap", "noUiSlider", "SwiperJS"] },
+    { "slug": "mosrealstroy-innovator", "title": "Innovator Website", "dateRange": { "start": "2023-01-15", "end": "2023-01-28" }, "imageUrl": "/images/works/innovator.png", "stack": ["HTML", "CSS", "JavaScript", "YandexMap", "noUiSlider", "SwiperJS"] },
+    { "slug": "olegtyper", "title": "Type Game for Keyboard Training", "dateRange": { "start": "2023-08-01", "end": "2022-12-15" }, "imageUrl": "/images/works/olegtyper.png", "stack": ["HTML", "CSS", "JavaScript", "Bootstrap"] },
+    { "slug": "who", "title": "Shift Calendar", "dateRange": { "start": "2024-06-01", "end": "2022-11-31" }, "imageUrl": "/images/works/who.png", "stack": ["HTML", "CSS", "JavaScript"] },
+    { "slug": "wordle", "title": "Wordle Clone", "dateRange": { "start": "2022-12-15", "end": "2022-10-28" }, "imageUrl": "/images/works/wordle.png", "stack": ["HTML", "CSS", "JavaScript"] },
+    { "slug": "notetranslate", "title": "Note Translate and Tab Builder", "dateRange": { "start": "2022-01-01", "end": "2022-10-15" }, "imageUrl": "/images/works/tab.png", "stack": ["HTML", "CSS", "JavaScript"] },
+    { "slug": "tdee", "title": "TDEE Calculator", "dateRange": { "start": "2022-09-01", "end": "2022-7-30" }, "imageUrl": "/images/works/tdeecalc.png", "stack": ["HTML", "CSS", "JavaScript"] },
+    { "slug": "bubbles", "title": "Bubbles Match Game", "dateRange": { "start": "2022-01-01", "end": "2022-05-15" }, "imageUrl": "/images/works/bubble.png", "stack": ["HTML", "CSS", "JavaScript"] },
+    { "slug": "alcosweeper", "title": "Minesweeper Game", "dateRange": { "start": "2021-11-08", "end": "2022-01-14" }, "imageUrl": "/images/works/alcosweeper.png", "stack": ["HTML", "CSS", "JavaScript"] },
+    { "slug": "pass", "title": "Password Generator", "dateRange": { "start": "2022-05-12", "end": "2021-12-20" }, "imageUrl": "/images/works/passgen.png", "stack": ["HTML", "CSS", "JavaScript"] }
+  ],
+  "jobs": [
+    { "slug": "acme-corp", "title": "Acme Corp (2023)", "dateRange": { "start": "2023-02-01", "end": "2023-12-31" }, "color": "#3B82F6" }
+  ]
+}

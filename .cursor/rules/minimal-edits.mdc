@@ -1,0 +1,13 @@
+---
+description: Do only what the request asks; no bonus refactors, optional features, or unrelated improvements
+alwaysApply: true
+---
+
+# Minimal Edits
+
+Fulfill the user's request with the **smallest change** that satisfies it. Do not refactor unrelated code, add "improvements," or introduce optional features (e.g. Nuxt Image, extra meta, lint fixes in other files) unless the user explicitly asks.
+
+- **Do**: Edit only what is needed for the requested task.
+- **Do not**: Suggest or add enhancements, comments, or refactors outside the scope of the request.
+
+When in doubt, do less; the user can ask for more.

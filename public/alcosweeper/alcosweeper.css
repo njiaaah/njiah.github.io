@@ -1,0 +1,161 @@
+/* UI */
+body{
+  touch-action: manipulation;
+  zoom: 1.25;
+  background-color: rgb(50, 50, 50);
+}
+#kakBeDiv {
+  outline: 1px solid black;
+  box-shadow: inset 0 0 45px 0 rgba(0, 0, 0, 0.75) ;
+}
+
+#kakBeDiv2 {
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15),
+
+}
+.flexcontainer {
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+
+}
+
+.flexitem{
+  font-family: calibri;
+  font-weight: bold;
+  margin-right: 15px;
+  color: #d2d2d2;
+}
+
+#flags{
+  margin-top: -2px;
+}
+select{
+  padding: 2px;
+  border-radius: 5px;
+  background-color: rgb(110, 110, 110);
+  color: rgb(50, 50, 50);
+  font-family: calibri;
+}
+
+select:hover{
+  padding: 2px;
+  border-radius: 5px;
+  background-color: rgb(50, 50, 50);
+  color
+  font-family: calibri;
+}
+option{
+  background-color: rgb(110, 110, 110);
+  color: rgb(50, 50, 50);
+  font-family: calibri;
+}
+
+.newgame {
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+  background-color: rgb(110, 110, 110);
+  color: #d2d2d2;
+}
+
+.newgame:hover {
+  background-color: rgb(50, 50, 50);
+  color: rgb(110, 110, 110);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 0 0px 1px rgba(255, 255, 255, 0.99);
+  cursor: pointer;
+
+}
+
+
+
+
+
+/* GAME */
+
+.kakJeYaZaebalsyaKorobkaEbanaya {
+  touch-action: manipulation;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+}
+
+.ontop {
+  touch-action: manipulation;
+  z-index: -7;
+}
+
+
+.kvadratiqueSerye {
+  touch-action: manipulation;
+  width: 20px;
+  height: 20px;
+  background-color: grey;
+  font-family: calibri;
+  font-weight: 300;
+  text-align: center;
+  font-size: 100%;
+  outline: 1px solid black;
+  }
+
+.kvadratiqueOverlay{
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  font-family: calibri;
+  font-style: oblique;
+  font-weight: 300;
+  text-align: center;
+  font-size: 100%;
+  outline: 1px solid black;
+}
+
+.kvadratiqueKrasnie {
+  touch-action: manipulation;
+  width: 20px;
+  height: 20px;
+  background-color: grey;
+  text-align: center;
+  font-size: 100%;
+  outline: 1px solid black;
+}
+
+.oneBomb {
+  color: blue;
+}
+
+.twoBombs {
+  color: rgb(117, 210, 35);
+}
+
+.threeBombs {
+  color: rgb(255, 0, 0);
+}
+
+.fourBombs {
+  color: rgb(205, 209, 13);
+}
+
+.fiveBombs {
+  color: black;
+}
+
+.sixBombs {
+  color: rgb(255, 0, 207)
+}
+
+.sevenBombs {
+  color: rgb(131, 26, 26)
+}
+
+.eightBombs {
+  color: #12ffdb
+}
+.invis {
+  opacity: 0%;
+  cursor: pointer;
+}

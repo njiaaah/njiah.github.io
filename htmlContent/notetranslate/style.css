@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+ul li {
+	list-style: none;
+}
+
+body {
+	--clr-contrast-1: hsl(205, 92%, 76%);
+	--clr-black: #585858;
+	--clr-yellow: #e9d7aad6;
+	--clr-bg: rgb(237, 245, 255);
+	font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	display: grid;
+	min-height: 100dvh;
+	color: var(--clr-black);
+	background-color: var(--clr-bg);
+	padding-top: 3rem;
+	font-weight: 600;
+}
+
+main {
+	width: min(100%, 1024px);
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+h1,
+h2 {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.fretboards-wrapper {
+	width: fit-content;
+	margin: 0 auto;
+	display: grid;
+	gap: 5rem;
+	margin-bottom: 5rem;
+}
+
+#guitar-fretboard,
+#uke-fretboard {
+	min-width: 100px;
+	min-height: 100px;
+}
+
+.row {
+	display: flex;
+}
+
+.fret {
+	outline: 2px solid var(--clr-black);
+}
+.cell {
+	border: 1px solid var(--clr-black);
+	width: 50px;
+	height: 35px;
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+}
+
+.cell:first-child {
+	border-right: 10px solid var(--clr-black);
+}
+
+.cell:nth-child(4),
+.cell:nth-child(6),
+.cell:nth-child(8),
+.cell:nth-child(11),
+.cell:nth-child(13) {
+	background-color: var(--clr-yellow);
+	position: relative;
+	z-index: 2;
+}
+
+.row:last-child .cell:nth-child(4)::after,
+.row:last-child .cell:nth-child(6)::after,
+.row:last-child .cell:nth-child(8)::after,
+.row:last-child .cell:nth-child(11)::after,
+.row:last-child .cell:nth-child(13)::after {
+	position: absolute;
+	display: grid;
+	place-items: center;
+	content: attr(data-col);
+	width: 100%;
+	height: 150%;
+	background-color: var(--clr-yellow);
+	z-index: 0;
+	transform: translate(0, calc(84% + 3px));
+	-webkit-transform: translate(0, calc(84% + 3px));
+	-moz-transform: translate(0, calc(84% + 3px));
+	-ms-transform: translate(0, calc(84% + 3px));
+	-o-transform: translate(0, calc(84% + 3px));
+	padding-bottom: 1rem;
+	padding-top: 0.5rem;
+	border-bottom-left-radius: 100px;
+	border-bottom-right-radius: 100px;
+	pointer-events: none;
+}
+.chord {
+	user-select: none;
+	pointer-events: none;
+}
+.fret {
+	position: relative;
+}
+
+.fretboards-wrapper:has(.selected-chord) .cell:not(:has(.selected-chord)) {
+	opacity: 01;
+}
+.chord {
+	display: grid;
+	place-items: center;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+.cell:has(.selected-chord) {
+	position: relative;
+	z-index: 100;
+}
+
+.selected-chord {
+	scale: 1.5;
+	opacity: 1;
+	background-color: rgb(138, 205, 50);
+	z-index: 100;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	color: white;
+}
+
+.tab-string-head {
+	min-width: 20px;
+	/* margin-right: 1rem; */
+	display: inline-block;
+}
+
+.tab-cell {
+	display: inline-block;
+	padding: 0.2rem;
+	margin-right: 0.1rem;
+	margin-bottom: 0.1rem;
+	cursor: pointer;
+	user-select: none;
+}
+
+#tabulature {
+	position: relative;
+}
+
+#editNotePanel {
+	--_panel-left: 0rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	background-color: rgb(108, 108, 108);
+	padding: 4px;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+}
+
+#editNotePanel input {
+	height: 75px;
+	width: 75px;
+	background-color: transparent;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+
+#tabulatureActions button,
+#editNotePanel button {
+	padding: 4px 4px;
+	height: 30px;
+	min-width: 30px;
+	font-weight: 800;
+	background-color: lightgrey;
+	color: var(--clr-black);
+	cursor: pointer;
+	outline: none;
+	border: none;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+
+#editNotePanel button:hover,
+#tabulatureActions button:hover {
+	outline: 2px solid var(--clr-black);
+}
+
+#editNotePanel button:active,
+#tabulatureActions button:active {
+	outline: 2px solid var(--clr-black);
+	filter: brightness(0.75);
+	-webkit-filter: brightness(0.75);
+}
+
+.button-text {
+	padding: 4px 12px !important;
+}
+
+.tabulature-field {
+	outline: 1px solid var(--clr-black);
+	padding: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	margin-bottom: 1rem;
+	overflow-x: auto;
+}
+
+.tabulature-field > span {
+	display: flex;
+}
+
+.tab-row {
+	white-space: nowrap;
+}
+.panel-numbers {
+	display: grid;
+	gap: 4px;
+	grid-template-columns: repeat(8, auto);
+}
+
+#panelClearNote {
+	grid-row: 1/2;
+	grid-column: 8/9;
+}
+
+.tab-note {
+	width: 16px;
+	display: inline-block;
+	text-align: center;
+}
+
+.tab-note:hover {
+	outline: 1px solid var(--clr-black);
+	cursor: pointer;
+}
+
+.panel-visible {
+	opacity: 1 !important;
+	pointer-events: all !important;
+}

@@ -1,0 +1,61 @@
+* {
+  box-sizing: content-box;
+}
+
+.container {
+	text-align:center;
+	}
+
+body {
+	background-color: black; 
+	text-align: center
+	}
+h1 {
+	color: #CCD6DD; 
+	text-align: center;
+	font-size: 80px;
+	}
+
+body {
+	align-content: center;
+		font-family: calibri;
+	}
+
+button {
+	display: inline-block;
+	border-color: white;
+	background-color: black;
+	color: white;
+	width: 65px;
+	height: 30px;
+	font-weight: 700;
+	align-content: center;
+	}
+
+button:hover {
+	background-color: white;
+	color: black;
+}
+
+
+
+
+log {
+	float:left;
+	padding: 10px;
+	font-size: 10px;
+	background: #111;
+	color: white;
+	width: 20%;
+	background-color: #111
+	height: 200px;
+}
+
+gen {
+	float:right;
+	color:white;
+	width: 70%
+}
+
+
+/*отсоси, будешь читать белое на черном*/

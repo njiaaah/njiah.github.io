@@ -1,0 +1,89 @@
+[
+    {
+        "id" : "1",
+        "h2" : "Центрировать див",
+        "content" : "<h1>Способ раз</h1><table><tbody><tr><td>.center{</td></tr><tr><td>&nbsp;</td><td>top:50%;</td></tr><tr><td>&nbsp;</td><td>left:50%;</td></tr><tr><td>&nbsp;</td><td>transition:translate(-50%,-50%)</td></tr><tr><td>&nbsp;</td><td>}</td></tr></tbody></table><h1>Способ два</h1><tbody><tr><td>.center{</td></tr><tr><td>&nbsp;</td><td>display:grid;</td></tr><tr><td>&nbsp;</td><td>justify-content:center;</td></tr><tr><td>&nbsp;</td><td>}</td></tr></tbody></table><p>&nbsp;</p><p>&nbsp;</p><table><tbody><tr><td>.center{</td></tr><tr><td>&nbsp;</td><td>display:grid;</td></tr><tr><td>&nbsp;</td><td>justify-content:center;</td></tr><tr><td>&nbsp;</td><td>align-items:center;</td></tr><tr><td>&nbsp;</td><td>}</td></tr></tbody></table><p>&nbsp;</p><h1>Способ три</h1><table><tbody><tr><td>.container{</td></tr><tr><td>&nbsp;</td><td>display:grid;</td></tr><tr><td>&nbsp;</td><td>place-items:center;</td></tr><tr><td>&nbsp;</td><td>}</td></tr></tbody></table>",
+        "tags" : " "
+
+    },
+
+    {
+        "id" : "2",
+        "h2" : "Cобрать сертификат",
+        "content" : "<p>-----BEGIN CERTIFICATE-----<br />(Your Primary SSL certificate: your_domain_name.crt)<br />-----END CERTIFICATE-----<br />-----BEGIN CERTIFICATE-----<br />(Your Intermediate certificate: DigiCertCA.crt)<br />-----END CERTIFICATE-----<br />-----BEGIN CERTIFICATE-----<br />(Your Root certificate: TrustedRoot.crt)<br />-----END CERTIFICATE-----</p>",
+        "tags" : " "
+
+    },
+
+    {
+        "id" : "3",
+        "h2" : "Привязать .js и .css",
+        "content" : "<h3>CSS</h3><br><p>&lt;link href='css.css' rel='stylesheet'&gt;</p><br><br><h3>JS</h3><br><p>&lt;script src='script.js'&gt;&lt/script&gt;</p>",
+        "tags" : " "
+
+    },
+
+    {
+        "id" : "4",
+        "h2" : "Как срать на работе",
+        "content" : "<h3>Способ раз</h3><br><p>.center{position: absolute;<br>top: 50%;<br>left: 50%;}</p>",
+        "tags" : " "
+
+    },
+
+    {
+        "id" : "5",
+        "h2" : "Как зацентрить див",
+        "content" : "<h3>Способ раз</h3><br><p>.center{position: absolute;<br>top: 50%;<br>left: 50%;}</p>",
+        "tags" : " "
+
+    },
+
+    {
+        "id" : "6",
+        "h2" : "Как зацентрить див",
+        "content" : "<h3>Способ раз</h3><br><p>.center{position: absolute;<br>top: 50%;<br>left: 50%;}</p>",
+        "tags" : " "
+
+    },
+
+    {
+        "id" : "7",
+        "h2" : "Как зацентрить див",
+        "content" : "<h3>Способ раз</h3><br><p>.center{position: absolute;<br>top: 50%;<br>left: 50%;}</p>",
+        "tags" : " "
+
+    },
+
+    {
+        "id" : "8",
+        "h2" : "Как зацентрить див",
+        "content" : "<h3>Способ раз</h3><br><p>.center{position: absolute;<br>top: 50%;<br>left: 50%;}</p>",
+        "tags" : " "
+
+    },
+
+    {
+        "id" : "9",
+        "h2" : "Как зацентрить див",
+        "content" : "<h3>Способ раз</h3><br><p>.center{position: absolute;<br>top: 50%;<br>left: 50%;}</p>",
+        "tags" : " "
+
+    },
+
+    {
+        "id" : "10",
+        "h2" : "Как зацентрить див",
+        "content" : "<h3>Способ раз</h3><br><p>.center{position: absolute;<br>top: 50%;<br>left: 50%;}</p>",
+        "tags" : " "
+
+    },
+
+    {
+        "id" : "11",
+        "h2" : "Как зацентрить див",
+        "content" : "<h3>Способ раз</h3><br><p>.center{position: absolute;<br>top: 50%;<br>left: 50%;}</p>",
+        "tags" : " "
+
+    }
+]

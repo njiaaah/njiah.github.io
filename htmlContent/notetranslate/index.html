@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Easily translate guitar notes to ukulele notes and build tabs with our free online tool. Perfect for musicians looking to convert and create music seamlessly.">
+    <title>Guitar to Ukulele Notes Translator and Tab Builder Tool | Free Online Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer> </script>
+</head>
+
+<body>
+
+    <main>
+
+        <!-- <button id="swap">swap</button> -->
+
+        <h1 hidden>Guitar to Ukulele Notes Translator and Tab Builder</h1>
+
+
+        <p hidden>Guitar to Ukulele notes
+            Guitar to Ukulele converter
+            Ukulele tabs builder
+            Guitar notes translation
+            Free online music tool</p>
+
+        <h2>EADGBE to GCEA</h2>
+
+        <div class="fretboards-wrapper">
+            <div id="guitar-fretboard" class="fret"></div>
+
+            <div id="uke-fretboard" class="fret"></div>
+        </div>
+
+        <h2>
+            Tab Constructor
+        </h2>
+
+        <div id="tabulature">
+
+            <div id="editNotePanel">
+                <!-- <input type="text"> -->
+                <div class="panel-numbers">
+                    <button class="panel-button-number">0</button>
+                    <button class="panel-button-number">1</button>
+                    <button class="panel-button-number">2</button>
+                    <button class="panel-button-number">3</button>
+                    <button class="panel-button-number">4</button>
+                    <button class="panel-button-number">5</button>
+                    <button class="panel-button-number">6</button>
+                    <button class="panel-button-number">7</button>
+                    <button class="panel-button-number">8</button>
+                    <button class="panel-button-number">9</button>
+                    <button class="panel-button-number">10</button>
+                    <button class="panel-button-number">11</button>
+                    <button class="panel-button-number">12</button>
+                    <button id="panelClose">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 15 15">
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="M11.782 4.032a.575.575 0 1 0-.813-.814L7.5 6.687L4.032 3.218a.575.575 0 0 0-.814.814L6.687 7.5l-3.469 3.468a.575.575 0 0 0 .814.814L7.5 8.313l3.469 3.469a.575.575 0 0 0 .813-.814L8.313 7.5z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <button class="button-text" id="panelClearNote">clear note</button>
+                    <button class="button-text" id="panelClearCol">clear column</button>
+                </div>
+
+            </div>
+
+            <span class="tabulature-field">
+                <span>
+                    <span class="tab-string-head">A </span><span>|</span> <span class="tab-row"></span>
+                </span>
+                <span>
+                    <span class="tab-string-head">E </span><span>|</span> <span class="tab-row"></span>
+                </span>
+                <span>
+                    <span class="tab-string-head">C </span><span>|</span> <span class="tab-row"></span>
+                </span>
+                <span>
+                    <span class="tab-string-head">G </span><span>|</span> <span class="tab-row"></span>
+                </span>
+
+
+            </span>
+
+            <div id="tabulatureActions">
+                <!-- <button class="button-text">clear</button> -->
+                <!-- <button class="button-text">copy tab</button> -->
+                <!-- <button>copy </button> -->
+            </div>
+
+
+
+        </div>
+
+    </main>
+
+    <a class="author-email"
+        style="width: 100%; text-align: center; opacity: .5; margin-top: auto; margin-bottom: 1rem; color: #353535; text-decoration: none;"
+        href="mailto:njiah@njiah.ru">
+        @</a>
+
+</body>
+
+</html>

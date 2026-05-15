@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    white-space: nowrap;
+    background-color: #ececec;
+}
+
+h2 {
+    margin: 2em 0;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+h3 {
+    margin: .75em 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* language */
+
+#lang img {
+    margin-right: 2px;
+    padding: 1px;
+    border: 1px solid #aaaaaa;
+    width: 1.5em;
+    position: relative;
+
+}
+
+#calcBMRparam input {
+    width: 5em;
+}
+
+button {
+    margin: .75em 0;
+}
+
+fieldset {
+    margin: .75em 0;
+}
+
+fieldset span {
+    margin: .35em 0;
+}
+
+.calcContainer {
+    margin: 3em 2em;
+    width: 50vw;
+}
+
+#calcBMRparam span{
+    width: 7em;
+    display: inline-block;
+    margin: .25em 0;
+
+}
+
+#calcTDEEresultConainer {
+    display: none;
+    width: 15em;
+    padding: .55em;
+}
+
+#calcBMRactivity {
+    display: grid;
+    grid-template-rows: repeat(5,1fr);
+    
+}
+
+.spanResult {
+    font-weight: 800;
+    padding: 10px 0;
+    display: inline-block;
+}
+
+.containerError {
+    outline: 1px solid red;
+    border-radius: .5em;
+}
+
+.containerError::after {
+    content: 'check input values';
+    position: absolute;
+    color: red;
+    margin-top: 1em;
+    font-size: 1.1em;
+}
+
+.containerError > .spanResult {
+    color: rgb(33, 33, 33);
+    letter-spacing: 1px;
+}
+
+
+#rusSpan {
+    opacity: .5;
+    font-size: 12px;
+    position: absolute;
+    transform: translateY(10px);
+}
+
+/* theme switch */
+
+#theme-switch {
+    /* outline: 1px solid red; */
+    /* position: absolute; */
+    margin-left: 5em;
+    position: absolute;
+    transform: translate(0, 10%);
+    font-size: 1.15em;
+    /* filter: grayscale(); */
+    cursor: pointer;
+    user-select: none;
+}
+
+.dark-theme {
+    filter: grayscale();
+}

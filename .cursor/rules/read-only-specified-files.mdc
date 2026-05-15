@@ -1,0 +1,13 @@
+---
+description: When the user specifies concrete files in the prompt, read only those files and nothing else from the project
+alwaysApply: true
+---
+
+# Read Only Specified Files
+
+When the user's prompt names **concrete files or paths** (e.g. by path, by @-mention, or by clear reference like "in src/foo.ts"), restrict yourself to reading **only those files**. Do not search the rest of the project, open other files, or explore the codebase unless the user explicitly asks for that.
+
+- **Do**: Read and use only the file(s) the user pointed to.
+- **Do not**: Run broad searches, grep the repo, or read unrelated files to "get context" when specific files were given.
+
+When the task is scoped to specific files or a single feature, do not explore the rest of the project unless the user asks. If the task cannot be done with just the specified files, say so and ask whether to look at more files.

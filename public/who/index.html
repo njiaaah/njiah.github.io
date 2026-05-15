@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кто?</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="overrides.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="favico.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg:slate-200 dark:bg-slate-800 min-h-screen h-screen overflow-hidden">
+    <main class="p-4 ring-1 ring-slate-200 dark:ring-slate-600 dark:bg-slate-800 text-xl 
+        font-semibold text-gray-800 max-w-[600px] mx-auto h-full 
+        overflow-hidden">
+
+        <header class="ring-1 ring-slate-200 dark:ring-slate-600 grid grid-cols-7 *:aspect-square bg-white   
+        *:uppercase *:text-bold *:text-gray-500 col-span-7 *:text-center *:items-center *:grid
+         dark:bg-slate-700 dark:*:text-slate-200 fixed w-[100%] -translate-x-4 top-0 
+        px-4 gap-0 max-w-[600px] user-none pointer-events-none shadow-bottom">
+            <div>пн</div>
+            <div>вт</div>
+            <div>ср</div>
+            <div>чт</div>
+            <div>пт</div>
+            <div>сб</div>
+            <div>вс</div>
+        </header>
+
+        <div id="calendar" class=" overflow-x-hidden grid grid-cols-7 col-span-7 overflow-scroll 
+                [&>div]:aspect-square *:grid *:items-center sm:text-[1.75rem] md:text-[2rem]
+                *:text-center mt-10 md:mt-16 pb-[200px] relative h-full">
+        </div>
+
+
+
+        <div id="legend" class=" *:text-center shadow-bottom ring-1 ring-slate-200 dark:ring-slate-600 z-10
+                    *:items-center fixed bottom-0 grid gap-2 px-4 py-4 bg-white 
+                     dark:bg-slate-700 left-auto right-auto w-full max-w-[600px] -translate-x-4 transition-all">
+            <div id="todayBtn"
+                class=" ring-slate-200 cursor-pointer bg-violet-300 rounded-xl p-2 flex-0 w-fit dark:text-slate-600 active:scale-90 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256">
+                    <path fill="white"
+                        d="M232.49 215.51L185 168a92.12 92.12 0 1 0-17 17l47.53 47.54a12 12 0 0 0 17-17ZM44 112a68 68 0 1 1 68 68a68.07 68.07 0 0 1-68-68" />
+                </svg>
+
+            </div>
+
+            <input hidden type="radio" name="radio" id="radio1">
+            <input hidden type="radio" name="radio" id="radio2">
+            <input hidden type="radio" name="radio" id="radio3">
+            <input hidden type="radio" name="radio" id="radio4" checked>
+            <input hidden type="checkbox" id="themeswitch">
+
+            <label for="radio1" class="workerlabel1 ring-red-300 bg-red-100 ring-0 rounded-xl flex p-2 w-full 
+                    text-sm uppercase active:scale-90 transition grid-cols-2 items-center justify-center
+                    gap-2"><span>Рост</span>
+                <svg data-worker="0" class="button-logo hidden text-red-500" xmlns="http://www.w3.org/2000/svg"
+                    width="20" height="20" viewBox="0 0 512 512">
+                    <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"
+                        fill="currentColor" />
+                </svg>
+            </label>
+            <label for="radio2" class="workerlabel2 ring-lime-300 bg-lime-100 ring-0 rounded-xl flex p-2 w-full 
+                    text-sm uppercase active:scale-90 transition grid-cols-2 items-center justify-center
+                    gap-2"><span>Эдмон</span>
+                <svg data-worker="1" class="button-logo hidden text-lime-500" xmlns="http://www.w3.org/2000/svg"
+                    width="20" height="20" viewBox="0 0 512 512">
+                    <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"
+                        fill="currentColor" />
+                </svg>
+            </label>
+            <label for="radio3" class="workerlabel3 ring-sky-300 bg-sky-100 ring-0 rounded-xl flex p-2 w-full 
+                    text-sm uppercase active:scale-90 transition grid-cols-2 items-center justify-center
+                    gap-2"><span>Тимур</span>
+                <svg data-worker="2" class="button-logo hidden text-sky-500" xmlns="http://www.w3.org/2000/svg"
+                    width="20" height="20" viewBox="0 0 512 512">
+                    <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"
+                        fill="currentColor" />
+                </svg>
+            </label>
+
+            <!-- X BUTTON -->
+            <label for="radio4"
+                class="xmarklabel ring-gray-300 bg-red-500 ring-0 rounded-xl flex p-2 w-full text-white">
+                <svg xmlns="http://www.w3.org/2000 *:outline/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </label>
+        </div>
+
+        <div id="author" class="absolute w-full bottom-[-100px] transition-all duration-500 z-5
+        ease-in-out max-w-[600px] flex items-center justify-center gap-6 -translate-x-4 opacity-50 dark:text-white">
+
+            <!-- <a class="w-fit h-fit" href="mailto:njiah@njiah.ru">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z" />
+                </svg>
+            </a> -->
+            <a class="w-fit h-fit" href="https://github.com/njiaaah">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" />
+                </svg>
+            </a>
+
+        </div>
+
+
+
+    </main>
+</body>
+
+</html>

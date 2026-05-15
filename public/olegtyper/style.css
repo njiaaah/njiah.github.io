@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+.body-bg {
+    background: var(--bs-secondary-bg-subtle);
+}
+
+ * {
+    /* outline: 1px solid rgba(255, 0, 0, 0.5); */
+    user-select: none;
+}
+
+:root {
+    --clr-bg: #0b5ed7;
+}
+
+html {
+    overflow-y: hidden;
+}
+
+#main-container {
+
+}
+
+.logo {
+    font-family: 'Russo One', sans-serif;
+    line-height: 75%;
+    font-size: 24px;
+    width: 65px;
+    height: 65px;
+    padding: 5px;
+    color: white;
+    background: var(--clr-bg);
+    /* outline: 1px solid red; */
+    display: inline !important;
+    border-radius: 10px;
+    opacity: .5;
+    /* border: 1px solid rgba(0, 0, 0, 0.404); */
+}
+
+.sidebar-container {
+    position: relative;
+}
+
+.close-menu-btn {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    right: .7rem;
+    background-color: black;
+    background: url(graphic/arrow-left-square-fill.svg);
+    background-size: cover;
+    filter: invert(24%) sepia(52%) saturate(4430%) hue-rotate(210deg) brightness(89%) contrast(92%);
+}
+
+
+
+#main-area {
+    height: 200vh;
+    overflow-x: hidden;
+    position: relative;
+    transition: all .5s ease;
+}
+
+/* #main-area {
+    outline: 1px solid red;
+} */
+
+/* POFIXSI KNOPKI EBLO */
+
+#main-area > div > button:last-child {
+    display: none;
+}
+
+/*  */
+
+.main-area-text-obj {
+    position: relative;
+    display: inline-block;
+    animation-name: slideIn;
+    animation-duration: .35s;
+    width: 29%;
+    transition: all .3s ease;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+}
+
+.scoreTime, .scoreAccuracy, .isUnlocked,.stats-container {
+    display: none;
+}
+
+.type {
+    padding-top: .5em;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.textAuthor {
+    font-size: .75rem;
+    opacity: .5;
+}
+
+.diff {
+    background-color: #ffc107;
+    color: #333333;
+    border: 1px solid #333333;
+    position: absolute;
+    font-size: 1rem;
+    top: 1rem;
+    right: 7.5rem;
+    padding-left: .4rem;
+    padding-right: .4rem;
+}
+
+.diff:before {
+    letter-spacing: 1px;
+    content: '⬢x'
+}
+
+.lang, .textIndex, .scoreTime,.scoreAccuracy  {
+    display: inline;
+    background-color: #333333;
+    color: white;
+    font-size: .75rem;
+    padding: .25em .65em;
+    border-radius: 3px;
+    margin-right: .5em;
+}
+
+.scoreTime {
+    background-color: #d1ecf1;
+    color: #333333;
+    border: 1px solid #333333;
+    position: absolute;
+    top: 1rem;
+    right: 3.75rem;
+}
+
+.scoreAccuracy {
+    background-color: #d1ecf1;
+    color: #333333;
+    border: 1px solid #333333;
+    position: absolute;
+    top: 1rem;
+    right: .75rem;
+}
+
+.textIndex {
+    display: none;
+}
+.textValue {
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 30vw;
+    max-height: 4.5rem;
+    margin: 1rem 0;
+    width: 100%;
+    height: 72px;
+}
+
+.textIndex {
+    background-color: rgba(255, 163, 58, 0.986);
+}
+
+.textIndex::before {
+    content: 'id: ';
+}
+
+.redborder {
+    outline: 1px solid red;
+}
+
+.dissapear {
+    opacity: 0;
+    transform: translateX(+500px);
+    transition: all .5s ease;
+}
+
+/* selected cock */
+
+.selected-obj {
+    position: absolute;
+    padding: 3rem !important;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin: 0 !important;
+    border-radius: 0px !important;
+    transition: all .8s ease;
+}
+
+.selected-obj .textValue {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 68%;
+    max-height: 50%;
+    margin: 1rem 0;
+    transition: all .3s ease;
+    height: 40%;
+    /* text-wrap: balance; */
+}
+
+.main-input {
+    height: 40%;
+    width: 90%;
+    float: left;
+    overflow: visible;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.main-input:focus {
+    border: none;
+    outline: 1px solid #333333;
+}
+
+.main-input::placeholder {
+    opacity: .5;
+    display: block;
+    font-size: 1.25rem;
+    color: #333333;
+    /* outline: 1px soli red; */
+    /* transform: translateY(-70%); */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 1000100;
+}
+
+.selected-obj .textValue span {
+    /* user-select: none; */
+}
+
+.selected-obj .scoreTime,
+.selected-obj .scoreAccuracy, 
+.selected-obj .diff {
+    display: none;
+}
+
+.selected-obj .stats-container {
+    /* outline: 1px solid red; */
+    /* display: block; */
+}
+
+.selected-obj .stats-container > div > div {
+    outline: 1px solid red;
+    padding: .5em 1rem;
+    min-width: 150px;
+}
+
+.inlineblock {
+    display: inline-block;
+}
+
+.correctChar {
+    background-color: lightgreen;
+    animation-name: pop;
+    animation-duration: .3s;
+    transition: all .5s ease;
+}
+
+.wrongChar {
+    background-color: rgba(255, 62, 62, 0.788);
+    animation-name: pop;
+    animation-duration: .3s;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1) translateY(0px);
+    }
+    50% {
+        transform: scale(1.25) translateY(-2px);
+    }
+    100% {
+        transform: scale(1) translateY(0px);
+    }
+}
+
+#currency {
+    position: absolute;
+    z-index: 10000;
+    top: 15px;
+    display: inline;
+    right: 15px;
+    padding: .325em 1em .325em 3em ;
+}
+
+.currency {
+    background-color: #ffc107;
+    cursor: pointer;
+    /* outline: 5px solid #ffc71e; */
+    color: #333333;
+    font-weight: 500;
+    margin: auto;
+    border-radius: 5px;
+    cursor: default;
+    padding: 0;
+}
+.modal-body .currency::before {
+    content: '⬢ ';
+    color: #333333;
+}
+
+#side-menu-container, #menu-toggle {
+    transition: all .5s ease;
+}
+
+.currency::after {
+    content: ' ';
+    height: 16px;
+    width: 16px;
+    top: 10px;
+    right: 10px;
+    background-size: cover;
+    /* background-color: black; */
+}
+
+.scale5 {
+    transform: scale(.85) translateX(-10%);
+    opacity: .5;
+}
+
+.locked * {
+    filter: blur(5px);
+
+}
+
+
+.btn-warning {
+    color: #333333;
+    border: 1px solid #33333360;
+}
+
+.btn-warning::before {
+    content: '⬢ ';
+    transform: scale(5.25);
+    font-size: 1rem;
+}
+
+.locked .btn {
+    filter: blur(0px);
+}
+
+.modal-colect-reward {
+    cursor: pointer;
+}
+
+.modal-colect-reward:hover {
+    animation-name: pop;
+    animation-duration: .56s;
+}
+
+#hero-page-logo {
+    height: 90vh;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#white-screen {
+    position: absolute;
+    background-color: white;
+    width: 100vw;
+    scale: 2;
+    height: 100vh;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 3s ease-in;
+}
+#hero-page-logo > div {
+    position: relative;
+    scale: 4;
+    height: 10rem;
+    width: 10rem;
+    transform: rotate(15deg);
+    border-radius: 5px;
+    animation-name: rotate360;
+    animation-duration: 180s;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transition: all .5s ease;
+    box-shadow: rgba(0, 0, 0, 0) 0px 5px 15px;
+}
+
+#hero-page-logo > div > div {
+    height: 5rem;
+    width: 5rem;
+    transform: rotate(15deg);
+    border-radius: 5px;
+    animation-name: rotate360;
+    animation-duration: 180s;
+    font-size: 1rem;
+    padding: 0;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transition: all .5s ease;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+@keyframes rotate360 {
+    0% {
+        transform: rotate(15deg) scale(1);
+    }
+
+    50%{
+        transform: rotate(190deg) scale(1.05);
+    }
+    100% {
+        transform: rotate(375deg) scale(1);
+    }
+}
+
+.hero-logo {
+    transform: translate(-10%, -20%);
+    padding: 0;
+    font-size: 2.2rem;
+    font-family: russo one;
+    line-height: 75%;
+    color: #0b5ed7;
+    opacity: .5;
+    scale: .8;
+    transition: all .5s ease;
+}
+
+#hero-page-logo:hover {
+    cursor: pointer;
+}
+
+#hero-page-logo:hover > div {
+    scale: 3.75;
+    transition: all .5s ease;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+}
+
+#hero-page-logo:hover > div > div {
+    cursor: pointer;
+    scale: 1.5;
+    transition: all .5s ease;
+    box-shadow: rgba(0, 0, 0, 0) 0px 5px 15px;
+}
+
+#hero-page-logo:hover > div > div > .hero-logo {
+    scale: .9;
+    transition: all .5s ease;
+}
+
+#version {
+    /* outline: 1px solid red; */
+    display: inline;
+    padding: 0;
+    font-weight: 500;
+    color: white;
+    opacity: .5;
+    width: 1rem;
+    position: absolute;
+    font-size: .35rem;
+    bottom: 0;
+    right: -2%;
+
+
+}

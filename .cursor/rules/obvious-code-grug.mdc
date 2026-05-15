@@ -1,0 +1,65 @@
+---
+description: Write obvious code—no complexity demon, even junior dev should understand
+alwaysApply: true
+---
+
+# Obvious Code (Grug-Style)
+
+**Complexity is the enemy.** Write code a junior developer can read and change without guessing.
+
+## Do
+
+- **Plain names**: `getUserById`, `saveToDatabase`, `formatDate`—what it does, not clever puns
+- **Straight-line logic**: Prefer `if/else` and early returns over deeply nested logic
+- **One job per function**: Small functions with clear inputs/outputs
+- **Explicit over clever**: Extra lines are fine if they make the flow obvious
+- **Comment the why, not the what**: Code shows *what*; comments explain *why* when it’s not obvious
+
+## Don’t
+
+- **Abstract too early**: Wait until you see the same pattern 2–3 times; avoid premature factories, base classes, layers
+- **Chain abstractions**: Avoid `AbstractBaseFactory.create()`—junior must trace too many files
+- **Use “smart” idioms**: Ternary chains, nested `.reduce`, clever one-liners—readability before brevity
+- **Hide complexity**: Put tricky logic in a tiny helper with a vague name so the caller looks simple
+
+## Examples
+
+```typescript
+// ❌ Complexity demon—what does this do?
+const r = items.reduce((a, i) => ({ ...a, [i.k]: i.v }), {});
+
+// ✅ Obvious—junior gets it
+const result: Record<string, string> = {};
+for (const item of items) {
+  result[item.key] = item.value;
+}
+```
+
+```typescript
+// ❌ Too clever
+const out = x ? y ? z : a : b;
+
+// ✅ Readable
+let out;
+if (x) {
+  out = y ? z : a;
+} else {
+  out = b;
+}
+```
+
+```typescript
+// ❌ Premature abstraction—junior must jump 3 files to understand
+const handler = createEventHandler(config, middleware);
+
+// ✅ Inline and obvious (until you truly need to reuse)
+function handleClick(event: MouseEvent) {
+  const target = event.target as HTMLElement;
+  if (!target.closest('.active')) return;
+  doTheThing(target);
+}
+```
+
+## Grug reminder
+
+*Complexity demon enters through “helpful” abstractions and clever code. Keep it simple. Junior should understand at first read.*

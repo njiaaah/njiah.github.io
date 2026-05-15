@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="btn btn-warning currency" id="currency">
+        0
+      </div>
+
+    <div id="myModal" class="modal mt-5" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Congratulations</h5>
+            </div>
+
+            <div class="modal-body container-fluid">
+              <div class="row">
+
+                <div class="col-5 py-2"></div>
+                <div class="scale5 col-2 py-2">You</div>
+                <div class="scale5 col-2 py-2">Objective</div>
+
+
+                <div class="col-5 py-2 px-2">Time</div>
+                <div id="TimePassed" class="col-2 py-2">NaNahui</div>
+                <div class="col-2 py-2" id="modal-time-needed">NaNahui</div>
+                <div class="currency col-2 text-center modal-colect-reward" id="time-reward">NaNahui</div>
+
+                <div class="col-5 py-2">Accuracy</div>
+                <div id="totalAccuracy" class="col-2 py-2">NaNahui</div>
+                <div id="accuracyNeeded" class="col-2 py-2">NaNahui</div>
+                <div class="currency col-2 text-center modal-colect-reward" id="acc-reward">NaNahui</div>
+
+                <div class="col-5 py-2">Symbols</div>
+                <div id="typedSymbols" class="col-2 py-2">NaNahui</div>
+                <div id="totalSymbols" class="col-2 py-2">NaNahui</div>
+                <div class="currency col-2 text-center modal-colect-reward" id="sym-reward">NaNahui</div>
+
+            
+
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" id="close-modal" class="btn btn-primary" data-toggle="#myModal" data-target="#myModal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+<div class="container-fluid outline main-container">
+    <div class="row justify-content-center align-items-center hide-scroll">
+
+        <div class="col-3 border border-right" style="width: 250px; background-color: #f0f0f0; height: 100vh;" id="side-menu-container">
+            <div class="list-group sidebar-container" id="side-menu">
+
+                <h1 class=" logo mx-2 my-3">OLE <br> GTY <br> PER </h1> 
+                <span class="close-menu-btn my-3 float-right" id="menu-toggle">X</span>
+                <button type="button" class="btn btn-primary m-2 mt-0 active" id="from-list-btn">From List</button>
+                <button type="button" class="btn btn-primary m-2 opacity-25">Custom</button>
+                <button type="button" class="btn btn-primary m-2 opacity-25">Recent</button>
+
+                <!-- debug shiet -->
+
+                <!-- <button type="button" class="btn btn-primary m-2 opacity-100" id="currencyAdd100">Add 10000</button>
+                <button type="button" class="btn btn-primary m-2 opacity-100" id="saveStorage">Save Storage</button> -->
+                <button type="button" class="btn btn-primary m-2 opacity-100" id="clearStorage">Reset Progress</button>
+            </div>
+        </div>
+        
+        <div class="col p-12 container-fluid" style="height: 100vh;" id="main-area">
+            <div class="row justify-content-center">
+                <div class="col-8 align-items-center" style="">
+                    <div class="row align-items-center justify-content-center" id="hero-page-logo" >
+                        <span id="white-screen"></span>
+                        
+                        <div class="row align-items-center justify-content-center" style="background: rgb(125,167,228)">
+                            <span id="version">v0.1</span>
+                            <div style="background: rgb(255, 255, 255);">
+                                <h1 class="hero-logo mx-2 my-3">OLE <br> GTY <br> PER </h1> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <script src="text.js"></script>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

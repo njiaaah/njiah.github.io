@@ -1,0 +1,13 @@
+---
+description: Use PLAN.md as source of truth for portfolio features; follow it instead of re-deriving architecture
+alwaysApply: true
+---
+
+# Plan First
+
+When the user asks for a feature or change that is covered in **PLAN.md** (project root), read the relevant section of the plan and follow it. Do not re-derive architecture or suggest a different structure unless the user explicitly asks.
+
+- **Do**: Align implementation with PLAN.md (screens, data model, file structure, stack).
+- **Do not**: Propose alternative patterns or extra scope that contradict or go beyond the plan.
+
+If the plan is ambiguous for the task, implement the minimal interpretation that fits the plan, or ask the user.
