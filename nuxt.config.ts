@@ -1,8 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { readdirSync } from 'node:fs'
+import { join } from 'node:path'
+
+function markdownRoutes(subdir: string, urlPrefix: string) {
+  const dir = join(process.cwd(), subdir)
+  return readdirSync(dir)
+    .filter((name) => name.endsWith('.md'))
+    .map((name) => `${urlPrefix}/${name.replace(/\.md$/, '')}`)
+}
+
 export default defineNuxtConfig({
-  
-  compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  compatibilityDate: '2025-07-15',  devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
@@ -23,8 +31,20 @@ export default defineNuxtConfig({
       darkMode: 'class',
     },
   },
+  nitro: {
+    preset: 'github_pages',
+    prerender: {
+      routes: [
+        '/',
+        '/timeline',
+        ...markdownRoutes('content/works', '/works'),
+        ...markdownRoutes('content/jobs', '/jobs'),
+      ],
+    },
+  },
   routeRules: {
-    '/works/**': { ssr: true },
+    '/works/**': { prerender: true },
+    '/jobs/**': { prerender: true },
   },
   app: {
     pageTransition: { name: 'page' },
