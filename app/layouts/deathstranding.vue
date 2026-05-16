@@ -6,6 +6,4 @@
 
 <script setup lang="ts">
 import '~/assets/css/ds/main.css'
-
-
 </script>

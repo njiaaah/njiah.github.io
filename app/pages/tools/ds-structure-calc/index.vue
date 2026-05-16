@@ -95,6 +95,7 @@ const showResourceNames = ref(true)
 const cartEntries = ref<CartEntry[]>([])
 const config = useRuntimeConfig()
 const canonicalUrl = `${config.public.siteUrl}/tools/ds-structure-calc`
+const ogImageUrl = `${config.public.siteUrl}/og/ds-calc.png`
 
 useSeoMeta({
   title: 'Death Stranding 2 Structure Cost Calculator',
@@ -103,9 +104,14 @@ useSeoMeta({
   ogDescription: 'Plan upgrades and total resources for Death Stranding 2 structures.',
   ogType: 'website',
   ogUrl: canonicalUrl,
-  twitterCard: 'summary',
+  ogImage: ogImageUrl,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageAlt: 'Death Stranding 2 structure cost calculator',
+  twitterCard: 'summary_large_image',
   twitterTitle: 'Death Stranding 2 Structure Cost Calculator',
   twitterDescription: 'Calculate material totals for structure upgrades in Death Stranding 2.',
+  twitterImage: ogImageUrl,
 })
 
 useHead({
