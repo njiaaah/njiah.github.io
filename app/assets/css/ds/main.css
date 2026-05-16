@@ -1,0 +1,48 @@
+/* DS folder fonts — use: font-family: var(--font-mono); etc. */
+@font-face {
+  font-family: 'ds-mono';
+  src: url('../../fonts/ds/BO CD Mono Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ds-mono';
+  src: url('../../fonts/ds/BO CD Mono Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-mono: 'ds-mono', ui-monospace, monospace;
+  --ds-glow: #00d4ff;
+  --ds-glow-soft: #00aaff;
+}
+
+/* White text + cyan outer glow (Death Stranding–style HUD) */
+.ds-text {
+  color: #f2fdff;
+  text-shadow:
+    0 0 2px var(--ds-glow),
+    0 0 6px var(--ds-glow),
+    0 0 14px var(--ds-glow-soft),
+    0 0 28px rgba(0, 212, 255, 0.65),
+    0 0 48px rgba(0, 170, 255, 0.4);
+}
+.ds-icon {
+  box-shadow:
+    0 0 2px var(--ds-glow),
+    0 0 6px var(--ds-glow),
+    0 0 14px var(--ds-glow-soft),
+    0 0 28px rgba(0, 212, 255, 0.65),
+    0 0 48px rgba(0, 170, 255, 0.4);
+}
+
+
+
+main {
+  font-family: var(--font-mono);
+  font-weight: 100;
+}

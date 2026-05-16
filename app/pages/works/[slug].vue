@@ -10,6 +10,10 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'timeline',
+});
+
 const route = useRoute();
 const slug = route.params.slug as string;
 

@@ -17,6 +17,11 @@ function portfolioIpxRoutes() {
 }
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',  devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      siteUrl: 'https://njiah.ru',
+    },
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
@@ -45,6 +50,7 @@ export default defineNuxtConfig({
       routes: [
         '/',
         '/timeline',
+        '/tools/ds-structure-calc',
         '/portfolio.json',
         ...portfolioIpxRoutes(),
         ...markdownRoutes('content/works', '/works'),
@@ -55,8 +61,21 @@ export default defineNuxtConfig({
   routeRules: {
     '/works/**': { prerender: true },
     '/jobs/**': { prerender: true },
+    '/tools/ds-structure-calc': { prerender: true },
   },
   app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en',
+      },
+      titleTemplate: '%s | njiah.ru',
+      meta: [
+        {
+          name: 'description',
+          content: 'Portfolio timeline, work history, and practical game tools by njiah.',
+        },
+      ],
+    },
     pageTransition: { name: 'page' },
   },
   css: ['~/assets/main.css'],

@@ -31,6 +31,31 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'timeline',
+});
+
+const config = useRuntimeConfig()
+const canonicalUrl = `${config.public.siteUrl}/timeline`
+
+useSeoMeta({
+  title: 'Portfolio Timeline',
+  description: 'Interactive timeline of portfolio projects and work history by njiah.',
+  ogTitle: 'Portfolio Timeline',
+  ogDescription: 'Explore projects and work history in a horizontal timeline view.',
+  ogType: 'website',
+  ogUrl: canonicalUrl,
+  twitterCard: 'summary',
+  twitterTitle: 'Portfolio Timeline',
+  twitterDescription: 'Interactive timeline of projects and work history by njiah.',
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: canonicalUrl },
+  ],
+})
+
 const { refresh, worksByYear, years } = usePortfolio();
 const scrollEl = ref<HTMLDivElement | null>(null);
 const SCROLL_KEY = 'timelineScrollLeft';

@@ -1,0 +1,221 @@
+{
+  "game": "Death Stranding 2",
+  "description": "Structure bandwidth and material costs by upgrade stage.",
+  "structures": [
+    {
+      "id": "postboxes",
+      "name": "POSTBOXES",
+      "bandwidth": 200,
+      "stages": [
+        null,
+        [{ "resource": "Metals", "amount": 200 }],
+        [{ "resource": "Metals", "amount": 600 }]
+      ]
+    },
+    {
+      "id": "watchtower",
+      "name": "WATCHTOWER",
+      "bandwidth": 250,
+      "stages": [
+        null,
+        [
+          { "resource": "Crystals", "amount": 32 },
+          { "resource": "Metals", "amount": 400 }
+        ],
+        [
+          { "resource": "Crystals", "amount": 150 },
+          { "resource": "Metals", "amount": 800 }
+        ]
+      ]
+    },
+    {
+      "id": "timefall-shelter",
+      "name": "TIMEFALL SHELTER",
+      "bandwidth": 500,
+      "stages": [
+        null,
+        [
+          { "resource": "Crystals", "amount": 32 },
+          { "resource": "Metals", "amount": 400 }
+        ],
+        [
+          { "resource": "Crystals", "amount": 300 },
+          { "resource": "Metals", "amount": 1200 }
+        ]
+      ]
+    },
+    {
+      "id": "generator",
+      "name": "GENERATOR",
+      "bandwidth": 350,
+      "stages": [
+        null,
+        [{ "resource": "Metals", "amount": 400 }],
+        [
+          { "resource": "Crystals", "amount": 100 },
+          { "resource": "Metals", "amount": 400 }
+        ]
+      ]
+    },
+    {
+      "id": "bridge-short",
+      "name": "BRIDGE (SHORT)",
+      "bandwidth": 1000,
+      "stages": [
+        [{ "resource": "Metals", "amount": 600 }],
+        [
+          { "resource": "Crystals", "amount": 60 },
+          { "resource": "Metals", "amount": 800 }
+        ],
+        [
+          { "resource": "Crystals", "amount": 300 },
+          { "resource": "Metals", "amount": 1000 }
+        ]
+      ]
+    },
+    {
+      "id": "bridge-medium",
+      "name": "BRIDGE (MEDIUM)",
+      "bandwidth": 1000,
+      "stages": [
+        [{ "resource": "Metals", "amount": 800 }],
+        [
+          { "resource": "Crystals", "amount": 90 },
+          { "resource": "Metals", "amount": 1200 }
+        ],
+        [
+          { "resource": "Crystals", "amount": 450 },
+          { "resource": "Metals", "amount": 1600 }
+        ]
+      ]
+    },
+    {
+      "id": "bridge-long",
+      "name": "BRIDGE (LONG)",
+      "bandwidth": 1000,
+      "stages": [
+        [{ "resource": "Metals", "amount": 1200 }],
+        [
+          { "resource": "Crystals", "amount": 150 },
+          { "resource": "Metals", "amount": 2000 }
+        ],
+        [
+          { "resource": "Crystals", "amount": 800 },
+          { "resource": "Metals", "amount": 2800 }
+        ]
+      ]
+    },
+    {
+      "id": "zip-line",
+      "name": "ZIP-LINE",
+      "bandwidth": 500,
+      "stages": [
+        null,
+        [
+          { "resource": "Chemicals", "amount": 240 },
+          { "resource": "Special Alloys", "amount": 480 }
+        ],
+        [
+          { "resource": "Crystals", "amount": 350 },
+          { "resource": "Chemicals", "amount": 1440 },
+          { "resource": "Special Alloys", "amount": 1440 }
+        ]
+      ]
+    },
+    {
+      "id": "jump-ramp",
+      "name": "JUMP RAMP",
+      "bandwidth": 550,
+      "stages": [
+        null,
+        [
+          { "resource": "Crystals", "amount": 480 },
+          { "resource": "Special Alloys", "amount": 240 }
+        ],
+        [
+          { "resource": "Crystals", "amount": 960 },
+          { "resource": "Resins", "amount": 480 },
+          { "resource": "Special Alloys", "amount": 480 }
+        ]
+      ]
+    },
+    {
+      "id": "safehouse",
+      "name": "SAFEHOUSE",
+      "bandwidth": 2500,
+      "stages": [
+        [
+          { "resource": "Crystals", "amount": 300 },
+          { "resource": "Resins", "amount": 960 },
+          { "resource": "Special Alloys", "amount": 960 }
+        ],
+        [
+          { "resource": "Crystals", "amount": 500 },
+          { "resource": "Resins", "amount": 1600 },
+          { "resource": "Special Alloys", "amount": 1920 }
+        ],
+        [
+          { "resource": "Crystals", "amount": 1000 },
+          { "resource": "Resins", "amount": 2240 },
+          { "resource": "Special Alloys", "amount": 2880 }
+        ]
+      ]
+    },
+    {
+      "id": "transponder",
+      "name": "TRANSPONDER",
+      "bandwidth": 1250,
+      "stages": [
+        null,
+        [
+          { "resource": "Resins", "amount": 320 },
+          { "resource": "Chemicals", "amount": 240 }
+        ],
+        [
+          { "resource": "Resins", "amount": 960 },
+          { "resource": "Chemicals", "amount": 720 }
+        ]
+      ]
+    },
+    {
+      "id": "chiral-bridge",
+      "name": "CHIRAL BRIDGE",
+      "bandwidth": 250,
+      "stages": [
+        null,
+        [
+          { "resource": "Crystals", "amount": 720 },
+          { "resource": "Special Alloys", "amount": 120 }
+        ],
+        [
+          { "resource": "Crystals", "amount": 1440 },
+          { "resource": "Resins", "amount": 240 },
+          { "resource": "Special Alloys", "amount": 240 }
+        ]
+      ]
+    },
+    {
+      "id": "hot-spring-digger",
+      "name": "HOT SPRING DIGGER",
+      "bandwidth": null,
+      "stages": [null, null, null],
+      "note": "Source table had no numeric or material data (placeholders only)."
+    },
+    {
+      "id": "catapult",
+      "name": "CATAPULT",
+      "bandwidth": 450,
+      "stages": [
+        null,
+        [
+          { "resource": "Resins", "amount": 320 },
+          { "resource": "Chemicals", "amount": 240 }
+        ],
+        [
+          { "resource": "Resins", "amount": 960 },
+          { "resource": "Chemicals", "amount": 720 }
+        ]
+      ]
+    }
+  ]
+}
