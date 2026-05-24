@@ -77,6 +77,7 @@
       </div>
 
       <DsStructureCalcCartSummary
+        class="v1-cart"
         :cart-entries="cartEntries"
         :resource-totals="resourceTotals"
         @remove="removeEntry"
@@ -475,6 +476,10 @@ const resourceTotals = computed(() => {
   }
   .v1-grid {
     grid-template-columns: 1fr;
+  }
+  .v1-cart {
+    order: -1;
+    position: static;
   }
 }
 
