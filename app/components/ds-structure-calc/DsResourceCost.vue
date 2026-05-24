@@ -1,53 +1,55 @@
 <template>
-  <span class="inline-flex items-center gap-1">
-    <span
-      v-if="imgUrl"
-      class="ds-resource-icon-wrap shrink-0"
-    >
-      <img
-        class="object-contain"
-        :src="imgUrl"
-        :alt="resource"
-        width="16"
-        height="16"
-      />
-    </span>
-    <span v-if="showResourceName">{{ resource }}</span>
-    {{ amount }}
+  <span class="v1-pill" :style="{ '--c': meta?.tone ?? '#888' }">
+    <span class="v1-pill-dot">{{ meta?.glyph ?? '?' }}</span>
+    <span class="v1-pill-name">{{ resource }}</span>
+    <span class="v1-pill-num">{{ amount.toLocaleString() }}</span>
   </span>
 </template>
 
 <script setup lang="ts">
-withDefaults(
-  defineProps<{
-    resource: string
-    amount: number
-    imgUrl?: string
-    showResourceName?: boolean
-  }>(),
-  { showResourceName: true },
-)
+const RESOURCE_META: Record<string, { tone: string; glyph: string }> = {
+  'Metals':        { tone: '#8aa1b8', glyph: 'M' },
+  'Crystals':      { tone: '#7fd6ff', glyph: 'C' },
+  'Resins':        { tone: '#c89bff', glyph: 'R' },
+  'Chemicals':     { tone: '#ffb86b', glyph: 'H' },
+  'Special Alloys': { tone: '#a3e6a1', glyph: 'A' },
+}
+
+const props = defineProps<{
+  resource: string
+  amount: number
+}>()
+
+const meta = computed(() => RESOURCE_META[props.resource])
 </script>
 
 <style scoped>
-.ds-resource-icon-wrap {
-  --size: 1rem;
-  display: inline-block;
-  width: var(--size);
-  height: var(--size);
-  position: relative;
-  z-index: 2;
+.v1-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--fg);
+  white-space: nowrap;
 }
-
-.ds-resource-icon-wrap::before {
-  content: '';
-  display: block;
-  position: absolute;
-  width: var(--size);
-  height: var(--size);
-  background-color: rgba(0, 212, 255, 0.65);
-  filter: blur(5px);
-  top: 0;
-  z-index: -1;
+.v1-pill-dot {
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  background: color-mix(in oklab, var(--c) 18%, var(--bg-3));
+  color: var(--c);
+  border: 1px solid color-mix(in oklab, var(--c) 35%, var(--bg-3));
+  border-radius: 3px;
+  font-size: 9.5px;
+  font-weight: 700;
+}
+.v1-pill-name {
+  color: var(--fg-dim);
+  font-size: 10.5px;
+}
+.v1-pill-num {
+  color: var(--c);
+  font-variant-numeric: tabular-nums;
 }
 </style>

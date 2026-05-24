@@ -1,6 +1,6 @@
 ---
 title: Death Stranding 2 Structure Cost Calculator
-description: Death Stranding 2 structure cost calculator for planning upgrade materials by level
+description: Death Stranding 2 structure cost calculator. Plan upgrade materials — Metals, Ceramics, Chemicals, Resins, Crystals, Special Alloys — for Generators, Watchtowers, Safehouses, Bridges, and more.
 ---
 
 <globalContentStackChips />
