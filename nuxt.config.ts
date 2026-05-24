@@ -20,18 +20,24 @@ function staticPageRoutes() {
   ]
 }
 
+function indexableSitemapRoutes() {
+  return [
+    '/',
+    '/timeline',
+    '/tools',
+    '/tools/ds-structure-calc',
+    ...markdownRoutes('content/jobs', '/jobs'),
+  ]
+}
+
 function sitemapUrls() {
   const buildDate = new Date().toISOString()
   const calcPath = '/tools/ds-structure-calc'
 
-  return staticPageRoutes().map((route) => {
+  return indexableSitemapRoutes().map((route) => {
     let lastmod = buildDate
 
-    if (route.startsWith('/works/')) {
-      const slug = route.replace('/works/', '')
-      const mdPath = join(process.cwd(), 'content/works', `${slug}.md`)
-      lastmod = statSync(mdPath).mtime.toISOString()
-    } else if (route.startsWith('/jobs/')) {
+    if (route.startsWith('/jobs/')) {
       const slug = route.replace('/jobs/', '')
       const mdPath = join(process.cwd(), 'content/jobs', `${slug}.md`)
       lastmod = statSync(mdPath).mtime.toISOString()
@@ -72,6 +78,7 @@ export default defineNuxtConfig({
     },
   },
   sitemap: {
+    zeroRuntime: true,
     excludeAppSources: true,
     exclude: ['/portfolio.json', '/_ipx/**'],
     urls: sitemapUrls(),
@@ -100,6 +107,7 @@ export default defineNuxtConfig({
         ...staticPageRoutes(),
         '/portfolio.json',
         ...portfolioIpxRoutes(),
+        '/sitemap.xml',
       ],
     },
   },
