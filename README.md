@@ -5,6 +5,6 @@ Personal portfolio site (Nuxt). Deployed via GitHub Actions to https://njiah.ru
 ## Dev
 
 ```bash
-npm install
-npm run dev
+bun install
+bun run dev
 ```
