@@ -98,11 +98,6 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         ...staticPageRoutes(),
-        '/examples/one',
-        '/examples/two',
-        '/examples/three',
-        '/examples/four',
-        '/examples/five',
         '/portfolio.json',
         ...portfolioIpxRoutes(),
       ],
@@ -113,11 +108,6 @@ export default defineNuxtConfig({
     '/jobs/**': { prerender: true },
     '/tools': { prerender: true },
     '/tools/ds-structure-calc': { prerender: true },
-    '/examples/one': { prerender: true },
-    '/examples/two': { prerender: true },
-    '/examples/three': { prerender: true },
-    '/examples/four': { prerender: true },
-    '/examples/five': { prerender: true },
   },
   app: {
     head: {
