@@ -52,10 +52,11 @@
       </div>
 
       <DsStructureCalcCartSummary
+        :cart-entries="cartEntries"
         :resource-totals="resourceTotals"
-        :item-counts="itemCounts"
         :resource-img-url="dsResourceImgUrl"
         :show-resource-names="showResourceNames"
+        @remove="removeEntry"
         @clear="clearCart"
       />
     </div>
@@ -66,8 +67,6 @@
 import DsResourceCost from '~/components/ds-structure-calc/DsResourceCost.vue'
 import dsStructuresData from '~/data/ds-structure-calc/structures.json'
 import type {
-  CartEntry,
-  CartItemCount,
   Structure,
   StructureResourceCost,
   StructureStage,
@@ -92,7 +91,7 @@ for (const [pathKey, url] of Object.entries(webpModules)) {
 }
 
 const showResourceNames = ref(true)
-const cartEntries = ref<CartEntry[]>([])
+const { cartEntries, addEntry, removeEntry, clearCart } = useDsStructureCalcCart()
 const config = useRuntimeConfig()
 const canonicalUrl = `${config.public.siteUrl}/tools/ds-structure-calc`
 const ogImageUrl = `${config.public.siteUrl}/og/ds-calc.png`
@@ -157,7 +156,7 @@ function onStageClick(
     return
   }
 
-  cartEntries.value.push({
+  addEntry({
     structureId: structure.id,
     structureName: structure.name,
     stageIndex,
@@ -183,28 +182,8 @@ const resourceTotals = computed(() => {
   return result
 })
 
-const itemCounts = computed((): CartItemCount[] => {
-  const counts = new Map<string, CartItemCount>()
-
-  for (const entry of cartEntries.value) {
-    const label = `${entry.structureName} ${entry.levelLabel}`
-    const existing = counts.get(label)
-    if (existing) {
-      existing.count += 1
-    } else {
-      counts.set(label, { label, count: 1 })
-    }
-  }
-
-  return Array.from(counts.values())
-})
-
-function clearCart() {
-  cartEntries.value = []
-}
-
 definePageMeta({
-  layout: 'deathstranding',
+  layout: 'tools',
 })
 </script>
 

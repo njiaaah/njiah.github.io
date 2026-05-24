@@ -1,5 +1,6 @@
 {
   "works": [
+    { "slug": "ds-structure-calc", "title": "DS2 Structure Calculator", "dateRange": { "start": "2026-01-01", "end": "2026-05-24" }, "imageUrl": "/og/ds-calc.png", "stack": ["Nuxt", "Vue"] },
     { "slug": "cat-login", "title": "Animated login logo", "dateRange": { "start": "2025-06-01", "end": "2026-01-31" }, "imageUrl": "/images/works/cat.png", "stack": ["SVG", "CSS"] },
     { "slug": "mine", "title": "Online Minesweeper", "dateRange": { "start": "2025-06-01", "end": "2025-06-31" }, "imageUrl": "/images/works/minepreview.png", "stack": ["Nuxt", "SVG", "Tailwind", "Supabase", "Node.js"] },
     { "slug": "tracker", "title": "Calorie Tracker", "dateRange": { "start": "2023-05-01", "end": "2025-01-30" }, "imageUrl": "/images/works/tracker-preview.png", "stack": ["Nuxt", "Tailwind", "NuxtUi","i18n","JWT", "IndexedDB"] },

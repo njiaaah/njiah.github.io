@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { readFileSync, readdirSync } from 'node:fs'
+import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 
 function markdownRoutes(subdir: string, urlPrefix: string) {
@@ -7,6 +7,41 @@ function markdownRoutes(subdir: string, urlPrefix: string) {
   return readdirSync(dir)
     .filter((name) => name.endsWith('.md'))
     .map((name) => `${urlPrefix}/${name.replace(/\.md$/, '')}`)
+}
+
+function staticPageRoutes() {
+  return [
+    '/',
+    '/timeline',
+    '/tools',
+    '/tools/ds-structure-calc',
+    ...markdownRoutes('content/works', '/works'),
+    ...markdownRoutes('content/jobs', '/jobs'),
+  ]
+}
+
+function sitemapUrls() {
+  const buildDate = new Date().toISOString()
+  const calcPath = '/tools/ds-structure-calc'
+
+  return staticPageRoutes().map((route) => {
+    let lastmod = buildDate
+
+    if (route.startsWith('/works/')) {
+      const slug = route.replace('/works/', '')
+      const mdPath = join(process.cwd(), 'content/works', `${slug}.md`)
+      lastmod = statSync(mdPath).mtime.toISOString()
+    } else if (route.startsWith('/jobs/')) {
+      const slug = route.replace('/jobs/', '')
+      const mdPath = join(process.cwd(), 'content/jobs', `${slug}.md`)
+      lastmod = statSync(mdPath).mtime.toISOString()
+    }
+
+    if (route === calcPath) {
+      return { loc: route, lastmod, priority: 0.9 as const }
+    }
+    return { loc: route, lastmod }
+  })
 }
 
 function portfolioIpxRoutes() {
@@ -17,16 +52,30 @@ function portfolioIpxRoutes() {
 }
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',  devtools: { enabled: true },
+  site: {
+    url: 'https://njiah.ru',
+  },
   runtimeConfig: {
     public: {
       siteUrl: 'https://njiah.ru',
     },
   },
   modules: [
+    '@nuxtjs/sitemap',
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
     '@nuxt/image',
   ],
+  content: {
+    experimental: {
+      nativeSqlite: true,
+    },
+  },
+  sitemap: {
+    excludeAppSources: true,
+    exclude: ['/portfolio.json', '/_ipx/**'],
+    urls: sitemapUrls(),
+  },
   components: [
     {
       path: '~/components/global/content',
@@ -48,20 +97,27 @@ export default defineNuxtConfig({
     preset: 'github_pages',
     prerender: {
       routes: [
-        '/',
-        '/timeline',
-        '/tools/ds-structure-calc',
+        ...staticPageRoutes(),
+        '/examples/one',
+        '/examples/two',
+        '/examples/three',
+        '/examples/four',
+        '/examples/five',
         '/portfolio.json',
         ...portfolioIpxRoutes(),
-        ...markdownRoutes('content/works', '/works'),
-        ...markdownRoutes('content/jobs', '/jobs'),
       ],
     },
   },
   routeRules: {
     '/works/**': { prerender: true },
     '/jobs/**': { prerender: true },
+    '/tools': { prerender: true },
     '/tools/ds-structure-calc': { prerender: true },
+    '/examples/one': { prerender: true },
+    '/examples/two': { prerender: true },
+    '/examples/three': { prerender: true },
+    '/examples/four': { prerender: true },
+    '/examples/five': { prerender: true },
   },
   app: {
     head: {
@@ -76,7 +132,6 @@ export default defineNuxtConfig({
         },
       ],
     },
-    pageTransition: { name: 'page' },
   },
   css: ['~/assets/main.css'],
 })

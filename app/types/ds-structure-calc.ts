@@ -20,6 +20,7 @@ export interface DsStructuresData {
 }
 
 export interface CartEntry {
+  id: string
   structureId: string
   structureName: string
   stageIndex: number

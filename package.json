@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@coremyslo/nuxt-icon-font": "^1.2.0",
+    "@nuxtjs/sitemap": "^8.0.15",
     "eslint": "^10.0.2"
   }
 }

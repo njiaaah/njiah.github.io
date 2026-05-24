@@ -1,7 +1,7 @@
 <template>
   <div
     ref="scrollEl"
-    class="flex flex-col overflow-x-scroll h-full w-full justify-end pb-4 px-20 bg-white dark:bg-gray-800"
+    class="flex flex-col overflow-x-scroll h-full w-full justify-end pb-4 px-20 bg-white dark:bg-gray-900"
     @wheel.prevent="onWheel"
     @scroll="saveScrollPosition"
   >

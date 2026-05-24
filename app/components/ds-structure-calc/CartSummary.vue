@@ -1,12 +1,15 @@
 <template>
-  <aside class="cart-panel shrink-0 w-full lg:w-64 border border-white/20 p-4">
-    <h2 class="text-sm mb-3">Cart</h2>
+  <aside
+    class="cart-panel shrink-0 w-full lg:w-64 lg:sticky lg:top-4 border border-white/20 p-4"
+    :class="{ 'cart-panel--pulse': pulse }"
+  >
+    <h2 class="text-sm mb-3 ds-text">Cart</h2>
 
-  <div v-if="resourceTotals.length === 0" class="text-xs text-white/50">
-    Click a cost cell to add
-  </div>
+    <div v-if="resourceTotals.length === 0" class="text-xs text-white/50">
+      Click any cost cell in the table
+    </div>
 
-    <div v-else class="flex flex-col gap-2 text-[8px] mb-4">
+    <div v-else class="flex flex-col gap-2 text-xs mb-4">
       <DsResourceCost
         v-for="item in resourceTotals"
         :key="item.resource"
@@ -17,14 +20,26 @@
       />
     </div>
 
-    <ul v-if="itemCounts.length > 0" class="text-xs space-y-1 mb-4">
-      <li v-for="item in itemCounts" :key="item.label">
-        {{ item.label }}<span v-if="item.count > 1"> ({{ item.count }})</span>
+    <ul v-if="cartEntries.length > 0" class="text-xs space-y-1 mb-4">
+      <li
+        v-for="entry in cartEntries"
+        :key="entry.id"
+        class="flex items-center justify-between gap-2"
+      >
+        <span>{{ entry.structureName }} {{ entry.levelLabel }}</span>
+        <button
+          type="button"
+          class="shrink-0 px-1.5 py-0.5 border border-white/30 hover:bg-white/10 leading-none"
+          aria-label="Remove from cart"
+          @click="emit('remove', entry.id)"
+        >
+          ×
+        </button>
       </li>
     </ul>
 
     <button
-      v-if="itemCounts.length > 0"
+      v-if="cartEntries.length > 0"
       type="button"
       class="text-xs px-3 py-1 border border-white/30 hover:bg-white/10"
       @click="emit('clear')"
@@ -36,16 +51,18 @@
 
 <script setup lang="ts">
 import DsResourceCost from '~/components/ds-structure-calc/DsResourceCost.vue'
-import type { CartItemCount, StructureResourceCost } from '~/types/ds-structure-calc'
+import type { CartEntry, StructureResourceCost } from '~/types/ds-structure-calc'
 
 defineProps<{
+  cartEntries: CartEntry[]
   resourceTotals: StructureResourceCost[]
-  itemCounts: CartItemCount[]
   resourceImgUrl: Record<string, string>
   showResourceNames: boolean
+  pulse?: boolean
 }>()
 
 const emit = defineEmits<{
+  remove: [id: string]
   clear: []
 }>()
 </script>
@@ -53,5 +70,18 @@ const emit = defineEmits<{
 <style scoped>
 .cart-panel {
   background-color: rgba(150, 212, 212, 0.08);
+}
+
+.cart-panel--pulse {
+  animation: cart-pulse 400ms ease-out;
+}
+
+@keyframes cart-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 6px rgba(0, 212, 255, 0);
+  }
 }
 </style>

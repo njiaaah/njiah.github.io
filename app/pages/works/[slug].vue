@@ -19,7 +19,28 @@ const slug = route.params.slug as string;
 
 const { data: doc, pending } = await useAsyncData(`work-${slug}`, () =>
   queryCollection('content').path(`/works/${slug}`).first()
-);
+)
+
+const config = useRuntimeConfig()
+const canonicalUrl = `${config.public.siteUrl}/works/${slug}`
+
+if (doc.value) {
+  useSeoMeta({
+    title: doc.value.title ?? slug,
+    description: doc.value.description ?? `Work detail for ${slug}`,
+    ogTitle: doc.value.title ?? slug,
+    ogDescription: doc.value.description ?? `Work detail for ${slug}`,
+    ogType: 'article',
+    ogUrl: canonicalUrl,
+    twitterCard: 'summary',
+    twitterTitle: doc.value.title ?? slug,
+    twitterDescription: doc.value.description ?? `Work detail for ${slug}`,
+  })
+}
+
+useHead({
+  link: [{ rel: 'canonical', href: canonicalUrl }],
+})
 </script>
 
 <style scoped>
