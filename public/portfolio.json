@@ -20,6 +20,5 @@
     { "slug": "pass", "title": "Password Generator", "dateRange": { "start": "2022-05-12", "end": "2021-12-20" }, "imageUrl": "/images/works/passgen.png", "stack": ["HTML", "CSS", "JavaScript"] }
   ],
   "jobs": [
-    { "slug": "acme-corp", "title": "Acme Corp (2023)", "dateRange": { "start": "2023-02-01", "end": "2023-12-31" }, "color": "#3B82F6" }
   ]
 }

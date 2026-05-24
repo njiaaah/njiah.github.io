@@ -4,7 +4,9 @@
       <div class="v1-head-l">
         <div class="v1-head-tag">ds2/util</div>
         <h1 class="v1-head-title">Structure Cost Calculator</h1>
-        <div class="v1-head-meta">Death Stranding 2 · 14 structures · 3 tiers · porter-grade output</div>
+        <div class="v1-head-meta">
+          Death Stranding 2 · 14 structures · 3 tiers · porter-grade output
+        </div>
       </div>
       <div class="v1-head-r">
         <div class="v1-search">
@@ -23,7 +25,11 @@
     </header>
 
     <div class="v1-grid">
-      <div class="v1-table" role="table" aria-label="Death Stranding 2 structure upgrade costs">
+      <div
+        class="v1-table"
+        role="table"
+        aria-label="Death Stranding 2 structure upgrade costs"
+      >
         <div class="v1-table-head" role="row">
           <div class="v1-th v1-th-name" role="columnheader">STRUCTURE</div>
           <div class="v1-th" role="columnheader">LEVEL 1</div>
@@ -38,7 +44,7 @@
           role="row"
         >
           <div class="v1-name" role="rowheader">
-            <span class="v1-name-i">{{ String(si + 1).padStart(2, '0') }}</span>
+            <span class="v1-name-i">{{ String(si + 1).padStart(2, "0") }}</span>
             {{ structure.name }}
           </div>
 
@@ -79,90 +85,101 @@
     </div>
 
     <p class="v1-desc">
-      Death Stranding 2 structure cost calculator showing cumulative upgrade materials per level.
-      Structures covered: Generators, Watchtowers, Safehouses, Bridges, Zip-Lines, Jump Ramps,
-      Transponders, Chiral Bridges, Catapults, and more. Resources tracked: Metals, Chemicals,
-      Resins, Crystals, and Special Alloys. Click any cost cell to add it to cart and track totals.
+      Death Stranding 2 structure cost calculator showing cumulative upgrade
+      materials per level. Structures covered: Generators, Watchtowers,
+      Safehouses, Bridges, Zip-Lines, Jump Ramps, Transponders, Chiral Bridges,
+      Catapults, and more. Resources tracked: Metals, Chemicals, Resins,
+      Crystals, and Special Alloys. Click any cost cell to add it to cart and
+      track totals.
     </p>
   </div>
 </template>
 
 <script setup lang="ts">
-import DsResourceCost from '~/components/ds-structure-calc/DsResourceCost.vue'
-import dsStructuresData from '~/data/ds-structure-calc/structures.json'
+import DsResourceCost from "~/components/ds-structure-calc/DsResourceCost.vue";
+import dsStructuresData from "~/data/ds-structure-calc/structures.json";
 import type {
   Structure,
   StructureResourceCost,
   StructureStage,
-} from '~/types/ds-structure-calc'
+} from "~/types/ds-structure-calc";
 
-const showResourceNames = ref(true)
-const query = ref('')
-const activeKey = ref<string | null>(null)
-let activeTimeout: ReturnType<typeof setTimeout> | null = null
+const showResourceNames = ref(true);
+const query = ref("");
+const activeKey = ref<string | null>(null);
+let activeTimeout: ReturnType<typeof setTimeout> | null = null;
 
-const { cartEntries, addEntry, removeEntry, clearCart } = useDsStructureCalcCart()
-const config = useRuntimeConfig()
-const canonicalUrl = `${config.public.siteUrl}/tools/ds-structure-calc`
-const ogImageUrl = `${config.public.siteUrl}/og/ds-calc.png`
+const { cartEntries, addEntry, removeEntry, clearCart } =
+  useDsStructureCalcCart();
+const config = useRuntimeConfig();
+const canonicalUrl = `${config.public.siteUrl}/tools/ds-structure-calc`;
+const ogImageUrl = `${config.public.siteUrl}/og/ds-calc.png`;
 
 const webApplicationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'Death Stranding 2 (DS2) Structure Cost Calculator',
-  description: 'Plan DS2 upgrade materials — Metals, Ceramics, Chemicals, Resins, Crystals, Special Alloys — for Generators, Watchtowers, Safehouses, Bridges, Zip-Lines, and more.',
-  applicationCategory: 'UtilitiesApplication',
-  operatingSystem: 'Web',
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Death Stranding 2 (DS2) Structure Cost Calculator",
+  description:
+    "Plan DS2 upgrade materials — Metals, Ceramics, Chemicals, Resins, Crystals, Special Alloys — for Generators, Watchtowers, Safehouses, Bridges, Zip-Lines, and more.",
+  applicationCategory: "UtilitiesApplication",
+  operatingSystem: "Web",
   url: canonicalUrl,
-}
+};
 
 useSeoMeta({
-  title: 'Death Stranding 2 (DS2) Structure Cost Calculator',
-  description: 'Death Stranding 2 structure cost calculator. Plan upgrade materials — Metals, Ceramics, Chemicals, Resins, Crystals, Special Alloys — for Generators, Watchtowers, Safehouses, Bridges, Zip-Lines, and more.',
-  ogTitle: 'Death Stranding 2 (DS2) Structure Cost Calculator',
-  ogDescription: 'Plan DS2 upgrade materials — Metals, Ceramics, Chemicals, Resins, Crystals, Special Alloys — for all structures across every upgrade level.',
-  ogType: 'website',
+  title: "Death Stranding 2 (DS2) Structure Cost Calculator",
+  description:
+    "Death Stranding 2 structure cost calculator. Plan upgrade materials — Metals, Ceramics, Chemicals, Resins, Crystals, Special Alloys — for Generators, Watchtowers, Safehouses, Bridges, Zip-Lines, and more.",
+  ogTitle: "Death Stranding 2 (DS2) Structure Cost Calculator",
+  ogDescription:
+    "Plan DS2 upgrade materials — Metals, Ceramics, Chemicals, Resins, Crystals, Special Alloys — for all structures across every upgrade level.",
+  ogType: "website",
   ogUrl: canonicalUrl,
   ogImage: ogImageUrl,
   ogImageWidth: 1200,
   ogImageHeight: 630,
-  ogImageAlt: 'Death Stranding 2 structure cost calculator',
-  twitterCard: 'summary_large_image',
-  twitterTitle: 'Death Stranding 2 (DS2) Structure Cost Calculator',
-  twitterDescription: 'Plan DS2 upgrade materials — Metals, Ceramics, Chemicals, Resins, Crystals, Special Alloys — for all structures across every upgrade level.',
+  ogImageAlt: "Death Stranding 2 structure cost calculator",
+  twitterCard: "summary_large_image",
+  twitterTitle: "Death Stranding 2 (DS2) Structure Cost Calculator",
+  twitterDescription:
+    "Plan DS2 upgrade materials — Metals, Ceramics, Chemicals, Resins, Crystals, Special Alloys — for all structures across every upgrade level.",
   twitterImage: ogImageUrl,
-})
+});
 
 useHead({
-  link: [{ rel: 'canonical', href: canonicalUrl }],
+  link: [{ rel: "canonical", href: canonicalUrl }],
   script: [
     {
-      type: 'application/ld+json',
+      type: "application/ld+json",
       textContent: JSON.stringify(webApplicationSchema),
     },
   ],
-})
+});
 
 const filteredStructures = computed(() => {
-  const q = query.value.trim().toLowerCase()
-  if (!q) return dsStructuresData.structures
-  return dsStructuresData.structures.filter(s => s.name.toLowerCase().includes(q))
-})
+  const q = query.value.trim().toLowerCase();
+  if (!q) return dsStructuresData.structures;
+  return dsStructuresData.structures.filter((s) =>
+    s.name.toLowerCase().includes(q),
+  );
+});
 
 function getCumulativeCosts(
   stages: StructureStage[],
   upToIndex: number,
 ): StructureResourceCost[] {
-  const totals: Record<string, number> = {}
+  const totals: Record<string, number> = {};
   for (let i = 0; i <= upToIndex; i++) {
-    const stage = stages[i]
-    if (!Array.isArray(stage)) continue
+    const stage = stages[i];
+    if (!Array.isArray(stage)) continue;
     for (const material of stage) {
-      totals[material.resource] = (totals[material.resource] ?? 0) + material.amount
+      totals[material.resource] =
+        (totals[material.resource] ?? 0) + material.amount;
     }
   }
-  return Object.entries(totals).map(([resource, amount]) => ({ resource, amount }))
-    .sort((a, b) => a.resource.localeCompare(b.resource))
+  return Object.entries(totals)
+    .map(([resource, amount]) => ({ resource, amount }))
+    .sort((a, b) => a.resource.localeCompare(b.resource));
 }
 
 function onStageClick(
@@ -170,48 +187,49 @@ function onStageClick(
   stageIndex: number,
   stage: StructureStage,
 ) {
-  const key = `${structure.id}-${stageIndex}`
+  const key = `${structure.id}-${stageIndex}`;
   addEntry({
     structureId: structure.id,
     structureName: structure.name,
     stageIndex,
     levelLabel: `L${stageIndex + 1}`,
     costs: getCumulativeCosts(structure.stages, stageIndex),
-  })
-  activeKey.value = key
-  if (activeTimeout !== null) clearTimeout(activeTimeout)
+  });
+  activeKey.value = key;
+  if (activeTimeout !== null) clearTimeout(activeTimeout);
   activeTimeout = setTimeout(() => {
-    if (activeKey.value === key) activeKey.value = null
-  }, 320)
+    if (activeKey.value === key) activeKey.value = null;
+  }, 320);
 }
 
 const resourceTotals = computed(() => {
-  const totals: Record<string, number> = {}
+  const totals: Record<string, number> = {};
   for (const entry of cartEntries.value) {
     for (const material of entry.costs) {
-      totals[material.resource] = (totals[material.resource] ?? 0) + material.amount
+      totals[material.resource] =
+        (totals[material.resource] ?? 0) + material.amount;
     }
   }
   return Object.entries(totals)
     .map(([resource, amount]) => ({ resource, amount }))
-    .sort((a, b) => a.resource.localeCompare(b.resource))
-})
+    .sort((a, b) => a.resource.localeCompare(b.resource));
+});
 </script>
 
 <style scoped>
 .v1-root {
-  --bg:       #0d1117;
-  --bg-2:     #141b24;
-  --bg-3:     #1c2530;
-  --line:     #232d3a;
-  --line-2:   #2d3a4a;
-  --fg:       #d9e2ec;
-  --fg-dim:   #6b7a8c;
+  --bg: #0d1117;
+  --bg-2: #141b24;
+  --bg-3: #1c2530;
+  --line: #232d3a;
+  --line-2: #2d3a4a;
+  --fg: #d9e2ec;
+  --fg-dim: #6b7a8c;
   --fg-dim-2: #3e4a5c;
-  --accent:   #ffb86b;
+  --accent: #ffb86b;
   --accent-2: #5cc7ff;
 
-  font-family: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
   background: var(--bg);
   color: var(--fg);
   min-height: 100vh;
@@ -245,12 +263,21 @@ const resourceTotals = computed(() => {
   margin-bottom: 8px;
 }
 .v1-head-title {
-  font: 600 22px/1.2 'JetBrains Mono', monospace;
+  font:
+    600 22px/1.2 "JetBrains Mono",
+    monospace;
   margin: 0;
   letter-spacing: -0.01em;
 }
-.v1-head-title::before { content: '> '; color: var(--accent); }
-.v1-head-meta { font-size: 11px; color: var(--fg-dim); margin-top: 6px; }
+.v1-head-title::before {
+  content: "> ";
+  color: var(--accent);
+}
+.v1-head-meta {
+  font-size: 11px;
+  color: var(--fg-dim);
+  margin-top: 6px;
+}
 .v1-head-r {
   display: flex;
   gap: 14px;
@@ -268,7 +295,9 @@ const resourceTotals = computed(() => {
   border-radius: 4px;
   width: 240px;
 }
-.v1-search-prompt { color: var(--accent); }
+.v1-search-prompt {
+  color: var(--accent);
+}
 .v1-search input {
   background: transparent;
   border: 0;
@@ -278,7 +307,9 @@ const resourceTotals = computed(() => {
   flex: 1;
   min-width: 0;
 }
-.v1-search input::placeholder { color: var(--fg-dim-2); }
+.v1-search input::placeholder {
+  color: var(--fg-dim-2);
+}
 
 .v1-toggle {
   display: inline-flex;
@@ -289,7 +320,9 @@ const resourceTotals = computed(() => {
   cursor: pointer;
   user-select: none;
 }
-.v1-toggle input { accent-color: var(--accent); }
+.v1-toggle input {
+  accent-color: var(--accent);
+}
 
 /* Grid */
 .v1-grid {
@@ -325,11 +358,19 @@ const resourceTotals = computed(() => {
   color: var(--fg-dim);
   border-right: 1px solid var(--line);
 }
-.v1-th:last-child { border-right: 0; }
-.v1-th-name { color: var(--accent); }
+.v1-th:last-child {
+  border-right: 0;
+}
+.v1-th-name {
+  color: var(--accent);
+}
 
-.v1-row { border-top: 1px solid var(--line); }
-.v1-row:hover { background: rgba(255, 255, 255, 0.015); }
+.v1-row {
+  border-top: 1px solid var(--line);
+}
+.v1-row:hover {
+  background: rgba(255, 255, 255, 0.015);
+}
 
 .v1-name {
   padding: 14px;
@@ -360,14 +401,18 @@ const resourceTotals = computed(() => {
   transition: background 120ms ease;
   box-sizing: border-box;
 }
-.v1-cell:last-child { border-right: 0; }
-.v1-cell:hover { background: rgba(255, 184, 107, 0.06); }
+.v1-cell:last-child {
+  border-right: 0;
+}
+.v1-cell:hover {
+  background: rgba(255, 184, 107, 0.06);
+}
 .v1-cell:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: -2px;
 }
 .v1-cell:hover::before {
-  content: '+ add';
+  content: "+ add";
   position: absolute;
   right: 10px;
   top: 50%;
@@ -379,9 +424,11 @@ const resourceTotals = computed(() => {
   padding: 2px 6px;
   border-radius: 3px;
 }
-.v1-cell.is-active { background: rgba(255, 184, 107, 0.18) !important; }
+.v1-cell.is-active {
+  background: rgba(255, 184, 107, 0.18) !important;
+}
 .v1-cell.is-active::after {
-  content: '✓ added';
+  content: "✓ added";
   position: absolute;
   right: 10px;
   top: 50%;
@@ -390,7 +437,9 @@ const resourceTotals = computed(() => {
   color: var(--accent);
   letter-spacing: 0.1em;
 }
-.v1-cell.is-active:hover::before { display: none; }
+.v1-cell.is-active:hover::before {
+  display: none;
+}
 
 .v1-cell-stack {
   display: flex;
@@ -406,7 +455,9 @@ const resourceTotals = computed(() => {
 }
 
 /* compact mode — hide pill names via :deep since DsResourceCost is a child component */
-.v1-root.v1-compact :deep(.v1-pill-name) { display: none; }
+.v1-root.v1-compact :deep(.v1-pill-name) {
+  display: none;
+}
 
 /* Description (SEO) */
 .v1-desc {
@@ -419,8 +470,12 @@ const resourceTotals = computed(() => {
 
 /* Responsive */
 @media (max-width: 900px) {
-  .v1-root { padding: 20px 16px 32px; }
-  .v1-grid { grid-template-columns: 1fr; }
+  .v1-root {
+    padding: 20px 16px 32px;
+  }
+  .v1-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 800px) {
@@ -430,7 +485,9 @@ const resourceTotals = computed(() => {
     background: transparent;
     overflow: visible;
   }
-  .v1-table-head { display: none; }
+  .v1-table-head {
+    display: none;
+  }
   .v1-row {
     display: block;
     min-width: 0;
@@ -440,7 +497,9 @@ const resourceTotals = computed(() => {
     background: var(--bg-2);
     margin-bottom: 8px;
   }
-  .v1-row:hover { background: var(--bg-2); }
+  .v1-row:hover {
+    background: var(--bg-2);
+  }
   .v1-name {
     border-right: 0;
     border-bottom: 1px solid var(--line);
@@ -488,11 +547,20 @@ const resourceTotals = computed(() => {
     top: auto;
     right: auto;
   }
-  .v1-cell-stack { flex: 1; }
-  .v1-free { flex: 1; align-self: auto; }
+  .v1-cell-stack {
+    flex: 1;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    gap: 0.5rem;
+  }
+  .v1-free {
+    flex: 1;
+    align-self: auto;
+  }
   /* persistent + on right */
   .v1-cell::after {
-    content: '+';
+    content: "+";
     position: static;
     margin-left: auto;
     flex-shrink: 0;
@@ -507,7 +575,7 @@ const resourceTotals = computed(() => {
     right: auto;
   }
   .v1-cell.is-active::after {
-    content: '✓';
+    content: "✓";
     color: var(--accent);
     position: static;
     font-size: 14px;
@@ -526,7 +594,12 @@ const resourceTotals = computed(() => {
 }
 
 @media (max-width: 480px) {
-  .v1-head { flex-direction: column; align-items: flex-start; }
-  .v1-search { width: 100%; }
+  .v1-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .v1-search {
+    width: 100%;
+  }
 }
 </style>
