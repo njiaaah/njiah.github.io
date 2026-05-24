@@ -470,7 +470,7 @@ const resourceTotals = computed(() => {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .v1-root {
     padding: 20px 16px 32px;
   }
