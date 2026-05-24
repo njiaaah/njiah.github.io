@@ -44,7 +44,7 @@ const tools = [
   {
     path: '/tools/ds-structure-calc',
     title: 'Death Stranding 2 Structure Cost Calculator',
-    description: 'Plan materials and upgrade costs for DS2 structures.',
+    description: 'Death Stranding 2 structure cost calculator for planning upgrade materials.',
   },
 ]
 

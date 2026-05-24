@@ -1,6 +1,6 @@
 <template>
   <div class="text-white bg-gray-800 min-h-screen w-screen p-4">
-    <h1 class="heading">Death Stranding 2 Structure Cost Calculator</h1>
+    <h1 class="heading mb-4">Death Stranding 2 Structure Cost Calculator</h1>
 
     <label class="flex items-center gap-2 text-sm mb-4 cursor-pointer">
       <input v-model="showResourceNames" type="checkbox" />
@@ -60,6 +60,12 @@
         @clear="clearCart"
       />
     </div>
+
+    <p class="description">
+      This Death Stranding 2 structure cost calculator shows cumulative upgrade materials for each structure level.
+      Click any level in the table to add it to cart and track total Metals, Ceramics, Chemicals, Resins, Crystals,
+      and Special Alloys.
+    </p>
   </div>
 </template>
 
@@ -95,12 +101,21 @@ const { cartEntries, addEntry, removeEntry, clearCart } = useDsStructureCalcCart
 const config = useRuntimeConfig()
 const canonicalUrl = `${config.public.siteUrl}/tools/ds-structure-calc`
 const ogImageUrl = `${config.public.siteUrl}/og/ds-calc.png`
+const webApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Death Stranding 2 Structure Cost Calculator',
+  description: 'Death Stranding 2 structure cost calculator for cumulative upgrade material totals.',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Web',
+  url: canonicalUrl,
+}
 
 useSeoMeta({
   title: 'Death Stranding 2 Structure Cost Calculator',
-  description: 'Calculate cumulative material costs for Death Stranding 2 structures by level.',
+  description: 'Death Stranding 2 structure cost calculator to plan cumulative material costs by upgrade level.',
   ogTitle: 'Death Stranding 2 Structure Cost Calculator',
-  ogDescription: 'Plan upgrades and total resources for Death Stranding 2 structures.',
+  ogDescription: 'Death Stranding 2 structure cost calculator for planning upgrades and total resources.',
   ogType: 'website',
   ogUrl: canonicalUrl,
   ogImage: ogImageUrl,
@@ -109,13 +124,19 @@ useSeoMeta({
   ogImageAlt: 'Death Stranding 2 structure cost calculator',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Death Stranding 2 Structure Cost Calculator',
-  twitterDescription: 'Calculate material totals for structure upgrades in Death Stranding 2.',
+  twitterDescription: 'Death Stranding 2 structure cost calculator for cumulative upgrade material totals.',
   twitterImage: ogImageUrl,
 })
 
 useHead({
   link: [
     { rel: 'canonical', href: canonicalUrl },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      textContent: JSON.stringify(webApplicationSchema),
+    },
   ],
 })
 
@@ -182,9 +203,6 @@ const resourceTotals = computed(() => {
   return result
 })
 
-definePageMeta({
-  layout: 'tools',
-})
 </script>
 
 <style scoped>
@@ -192,7 +210,12 @@ definePageMeta({
 .heading {
   background: linear-gradient(90deg, rgba(0, 212, 255, 0.65), transparent 50%);
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.description {
+  margin-top: 0.75rem;
+  max-width: 64rem;
 }
 
 table, th, td {

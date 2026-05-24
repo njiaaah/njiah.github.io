@@ -22,6 +22,12 @@
         >
           tools
         </NuxtLink>
+        <NuxtLink
+          to="/tools/ds-structure-calc"
+          class="font-medium text-gray-500 dark:text-gray-400 underline underline-offset-4 hover:no-underline"
+        >
+          death stranding 2 structure cost calculator
+        </NuxtLink>
       </div>
     </div>
   </div>
