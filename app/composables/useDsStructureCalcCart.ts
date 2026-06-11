@@ -40,6 +40,13 @@ export function useDsStructureCalcCart() {
   onMounted(loadFromStorage)
   watch(cartEntries, saveToStorage, { deep: true })
 
+  function addEntry(entry: Omit<CartEntry, 'id'>) {
+    cartEntries.value.push({
+      ...entry,
+      id: createCartEntryId(),
+    })
+  }
+
   function createCartEntryId(): string {
     if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
       return crypto.randomUUID()
