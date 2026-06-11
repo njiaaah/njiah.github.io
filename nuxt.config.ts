@@ -2,6 +2,7 @@
 import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 
+
 function markdownRoutes(subdir: string, urlPrefix: string) {
   const dir = join(process.cwd(), subdir)
   return readdirSync(dir)
